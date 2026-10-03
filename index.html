@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Better You Mind Wellness Clinic | Understand. Heal. Grow.</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-main: #FFFFFF;
+            --bg-card: #FFFFFF;
+            --brand-sage: #C6CFBE;
+            --brand-sage-dark: #A9B5A0;
+            --brand-brown-photo: #a48348;
+            --primary-dark: #2B2825;
+            --text-muted: #554D4A;
+            --gold-accent: #C5A059;
+            --border-color: #D8DFD2;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--primary-dark);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4, .serif-font {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--brand-sage);
+            color: var(--primary-dark);
+            padding: 8px 5%;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-weight: 500;
+        }
+
+        .top-bar-info {
+            display: flex;
+            gap: 20px;
+        }
+
+        .top-bar-info i {
+            color: var(--brand-brown-photo);
+            margin-right: 6px;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .header-logo-img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            line-height: 1.1;
+            color: var(--primary-dark);
+        }
+
+        .logo-subtitle {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+            color: var(--primary-dark);
+        }
+
+        .nav-links a:hover {
+            color: var(--brand-brown-photo);
+        }
+
+        .btn-nav-book {
+            background-color: var(--brand-sage);
+            color: var(--primary-dark);
+            padding: 10px 22px;
+            border-radius: 30px;
+            transition: var(--transition);
+            border: 1px solid var(--brand-sage);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .btn-nav-book:hover {
+            background-color: var(--brand-sage-dark);
+            border-color: var(--brand-sage-dark);
+            color: var(--primary-dark);
+            transform: translateX(3px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 5%;
+            background: var(--brand-sage);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-text {
+            text-align: left;
+        }
+
+        .hero-subtitle {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--brand-brown-photo);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-desc {
+            color: var(--primary-dark);
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-start;
+        }
+
+        .hero-image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-clinic-photo {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            border: 3px solid #FFFFFF;
+            object-fit: cover;
+        }
+
+        @media (max-width: 850px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 50px 5%;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-btns {
+                justify-content: center;
+            }
+        }
+
+        .btn-hero-primary {
+            background-color: var(--brand-brown-photo);
+            color: #FFFFFF;
+            padding: 10px 22px;
+            border-radius: 30px;
+            transition: var(--transition);
+            border: 1px solid var(--brand-brown-photo);
+            display: inline-block;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .btn-hero-primary:hover {
+            background-color: #8a6c38;
+            border-color: #8a6c38;
+            color: #FFFFFF;
+        }
+
+        .btn-hero-secondary {
+            background: transparent;
+            color: var(--primary-dark);
+            border: 1px solid var(--primary-dark);
+            padding: 10px 22px;
+            border-radius: 30px;
+            transition: var(--transition);
+            display: inline-block;
+            font-size: 0.9rem;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .btn-hero-secondary:hover {
+            background-color: var(--primary-dark);
+            color: #FFFFFF;
+        }
+
+        /* Section Global Styling */
+        section {
+            padding: 80px 5%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 2px;
+            background: var(--brand-brown-photo);
+            margin: 10px auto 0;
+        }
+
+        .section-subtitle {
+            color: var(--brand-brown-photo);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        /* About Section */
+        #about {
+            background-color: var(--brand-sage);
+            padding: 80px 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-text-content {
+            text-align: left;
+        }
+
+        #about h2 {
+            color: var(--primary-dark);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            color: var(--primary-dark);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-clinic-photo {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 3px solid #FFFFFF;
+            object-fit: cover;
+        }
+
+        @media (max-width: 850px) {
+            #about {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 50px 5%;
+            }
+
+            .about-text-content {
+                text-align: center;
+            }
+        }
+
+        /* Founder Section */
+        #founder {
+            background-color: var(--brand-brown-photo);
+            padding: 80px 5%;
+        }
+
+        .founder-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+        }
+
+        @media (max-width: 850px) {
+            .founder-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .founder-img-box {
+            background-color: var(--brand-brown-photo);
+            color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .founder-img-box .sub-title {
+            color: #FFFFFF;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .founder-img-box .founder-name {
+            color: #FFFFFF;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .gold-divider {
+            width: 50px;
+            height: 2px;
+            background-color: #FFFFFF;
+            margin: 0 auto 20px;
+        }
+
+        .founder-photo {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+            margin-bottom: 15px;
+        }
+
+        .founder-info-content {
+            background-color: #FFFFFF;
+            padding: 45px;
+            color: var(--primary-dark);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .founder-tag {
+            background: var(--brand-brown-photo);
+            color: #FFFFFF;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 12px;
+            margin-right: 5px;
+        }
+
+        .founder-words {
+            background: var(--brand-sage);
+            padding: 20px;
+            border-left: 4px solid var(--brand-brown-photo);
+            border-radius: 0 8px 8px 0;
+            margin-top: 20px;
+            font-style: italic;
+            color: var(--primary-dark);
+        }
+
+        /* Services Grid */
+        #services {
+            background-color: var(--brand-sage);
+            padding: 80px 5%;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: #FFFFFF;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+            border-color: var(--brand-brown-photo);
+        }
+
+        .service-card.featured-card {
+            grid-column: 1 / -1;
+            background: #FFFFFF;
+            border: 2px solid var(--brand-brown-photo);
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--brand-sage);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--brand-brown-photo);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: var(--brand-brown-photo);
+        }
+
+        .service-card p, .service-card li {
+            color: var(--primary-dark);
+            font-size: 0.95rem;
+        }
+
+        .corporate-list {
+            margin-top: 12px;
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 8px;
+        }
+
+        .corporate-list li {
+            position: relative;
+            padding-left: 20px;
+            font-weight: 500;
+        }
+
+        .corporate-list li::before {
+            content: "•";
+            color: var(--brand-brown-photo);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        /* Philosophy Section */
+        #vision-mission {
+            position: relative;
+            background: url(philosophy.jpg) center/cover no-repeat;
+            padding: 100px 5%;
+            color: #FFFFFF;
+            isolation: isolate;
+        }
+
+        #vision-mission::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(43, 40, 37, 0.65);
+            z-index: -1;
+        }
+
+        .vm-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .vm-card {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 40px 30px;
+            border-radius:16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+        .vm-card h3 {
+            font-size: 2rem;
+            color: var(--brand-sage, #c6cfbe);
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .vm-card p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #f8f8f8;
+        }
+
+        @media (max-width: 768px) {
+            .vm-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            #vision-mission {
+                padding: 60px 5%;
+            }
+        }
+
+        /* FAQ Section */
+        #faq {
+            background-color: #FFFFFF;
+            padding: 80px 5%;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .faq-item {
+            background-color: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .faq-item summary {
+            padding: 20px 25px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--brand-brown-photo);
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--brand-brown-photo);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        .faq-content {
+            padding: 0 25px 20px 25px;
+            color: var(--text-muted);
+            border-top: 1px solid #f0ebe4;
+            padding-top: 15px;
+            font-size: 0.98rem;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: var(--brand-sage);
+            padding: 80px 5%;
+        }
+
+        .contact-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 850px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .info-card {
+            background: #FFFFFF;
+            padding: 35px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+
+        .info-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            align-items: flex-start;
+        }
+
+        .info-item i {
+            width: 40px;
+            height: 40px;
+            background: var(--brand-sage);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand-brown-photo);
+            flex-shrink: 0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: #FFFFFF;
+            font-family: inherit;
+        }
+
+        .btn-send-request {
+            background-color: var(--brand-brown-photo);
+            color: #FFFFFF;
+            padding: 12px;
+            border-radius: 8px;
+            transition: var(--transition);
+            border: 1px solid var(--brand-brown-photo);
+            display: block;
+            width: 100%;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-send-request:hover {
+            background-color: #8a6c38;
+            border-color: #8a6c38;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--brand-brown-photo);
+            color: #FFFFFF;
+            padding: 50px 5% 20px;
+            text-align: center;
+        }
+
+        .footer-logo-img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            color: #FFFFFF;
+            margin-bottom: 5px;
+        }
+
+        .footer-tagline {
+            color: #F8FAF7;
+            font-style: italic;
+            margin-bottom: 25px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 20px;
+            font-size: 0.85rem;
+            color: #F3EBE1;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 32px;
+            box-shadow: 2px 5px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128c7e;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/+917045914020?text=Hello!%20I%20would%20like%20to%20know%20more%20about%20mental%20wellbeing."
+       class="whatsapp-float"
+       target="_blank"
+       aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Top Contact Bar -->
+    <div class="top-bar">
+        <div class="top-bar-info">
+            <span><i class="fa-solid fa-phone"></i> +91 70459 14020</span>
+            <span><i class="fa-solid fa-location-dot"></i> Mira Road, Mumbai 401107</span>
+        </div>
+        <div>
+            <span><i class="fa-solid fa-heart"></i> Confidential & Compassionate Care</span>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="logo-brown.png" alt="Better You Logo" class="header-logo-img">
+            <div class="logo-text">
+                <span class="logo-title serif-font">Better You</span>
+                <span class="logo-subtitle">Mind Wellness Clinic</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#founder">Founder</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#vision-mission">Philosophy</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact" class="btn-nav-book">Book Session <i class="fa-solid fa-arrow-right"></i></a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <p class="hero-subtitle">Better You Mind Wellness Clinic</p>
+            <h1 class="hero-title serif-font">A Safe Space to Understand, Heal and Grow</h1>
+            <p class="hero-desc">Dedicated to helping individuals, couples, and families navigate life's emotional, relational, and personal challenges in a confidential, non-judgemental environment.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn-hero-primary">Book a Consultation</a>
+                <a href="#services" class="btn-hero-secondary">Explore Services</a>
+            </div>
+        </div>
+
+        <div class="hero-image-container">
+            <img src="clinic-wall.png" alt="Better You Clinic Interior - Safe Space Wall" class="hero-clinic-photo">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-text-content">
+            <h2 class="serif-font">Our Person-Centred Approach</h2>
+            <p>At Better You Mind Wellness Clinic, we believe that understanding your past and present is key to shaping a fulfilling future. We provide a space where you can feel heard and valued.</p>
+            <p>Led by Seena Simon (BA - Psychology, MA - Counseling Psychology, Diploma in Narrative Therapy), our clinic in Mira Road, Mumbai, focuses on empathy, authenticity, and collaboration.</p>
+            <p>Whether you're seeking guidance for anxiety, relationship issues, or personal development, we tailor our approach to meet your unique needs—empowering you with the insights and tools to thrive.</p>
+        </div>
+        <div class="about-image-container">
+            <img src="about.png" alt="Active Listening at Better You Clinic" class="about-clinic-photo">
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section id="founder">
+        <div class="founder-container">
+            <div class="founder-img-box">
+                <p class="sub-title">MEET OUR FOUNDER</p>
+                <h2 class="founder-name serif-font">Seena Simon</h2>
+                <div class="gold-divider"></div>
+                <img src="founder.png" alt="Seena Simon - Founder" class="founder-photo">
+                <p style="font-size: 0.9rem; color: #FFFFFF; margin-top: 5px;">Founder & Lead Therapist</p>
+                <div style="margin-top: 15px;">
+                    <span class="founder-tag" style="background-color: rgba(255,255,255,0.2);">20+ Years Experience</span>
+                    <span class="founder-tag" style="background-color: rgba(255,255,255,0.2);">20,000+ Practice Hours</span>
+                </div>
+            </div>
+
+            <div class="founder-info-content">
+                <span class="founder-tag" style="align-self: flex-start;">Post Graduate in Counselling Psychology</span>
+                <h3 class="serif-font" style="font-size: 1.8rem; margin: 10px 0 15px; color: var(--brand-brown-photo);">Aftercare Specialist & Talk Therapist</h3>
+                <p style="color: var(--text-muted);">Specializing in supporting clients facing the effects of Trauma, Anxiety, Depression, and Sleep Disorders. Her extensive training in Cognitive Behavioral Therapy (CBT) equips her to address intricate thought and emotion patterns.</p>
+                <p style="margin-top: 12px; font-size: 0.95rem; color: var(--text-muted);">
+                    <strong>Specialized Expertise:</strong> TFCBT, HIV Counselling, ACT, REBT, Gestalt Therapy, Psychological Tests, Couples Counselling, and Career Counselling.
+                </p>
+                
+                <div class="founder-words">
+                    <p><strong>"Through this Clinic, my attempt is to help you understand emotions behind behavior, identify root causes, treat Adverse Childhood Experiences, and learn healthy ways to resolve conflicts."</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="section-header">
+            <p class="section-subtitle">How We Help</p>
+            <h2 class="section-title">Our Counselling Services</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-user"></i></div>
+                <h3>Individual Counselling</h3>
+                <p>Support for resolving interpersonal conflicts, relationship issues, personal, academic, or career challenges through deep conversation.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-heart"></i></div>
+                <h3>Couples & Relationship</h3>
+                <p>Resolving marital issues through lessons of grace, forgiveness, and sacrificial love. Shifting perspective to "what can I give rather than get."</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-people-roof"></i></div>
+                <h3>For Children & Families</h3>
+                <p>When a child is struggling, the whole family is affected. Children's emotional well-being can influence the entire family environment. Similarly, family stress can affect a child's confidence, behaviour and development.</p>
+                <p style="margin-top: 8px;">At Better You, we look at the individual within the context of their family and environment, helping children and parents understand each other better. We also believe that supporting parents is an important part of supporting children.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-laptop"></i></div>
+                <h3>Online Counselling</h3>
+                <p>Convenient and confidential online therapy sessions so professional mental health support is always just a conversation away.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-compass"></i></div>
+                <h3>Career Counselling</h3>
+                <p>Guidance for students and adults to understand their strengths, explore professional options, and make confident career choices.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-hands-holding-child"></i></div>
+                <h3>Adolescent Support</h3>
+                <p>Age-appropriate counselling navigating academic pressure, identity, emotional challenges, and major life transitions.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-cloud-sun"></i></div>
+                <h3>Grief & Loss Counselling</h3>
+                <p>Compassionate care guiding individuals through bereavement, emotional pain, and processing deep loss.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-brain"></i></div>
+                <h3>Mental Health Programs</h3>
+                <p>Structured programs to address anxiety, stress management, sleep disorders, and emotional resilience building.</p>
+            </div>
+
+            <div class="service-card featured-card">
+                <div class="service-icon"><i class="fa-solid fa-building-user"></i></div>
+                <h3>Corporate Counselling — For Organisations</h3>
+                <p><strong>Building Healthier, More Supported Workplaces:</strong> Employees carry different aspects of their lives into the workplace. Personal stress, family concerns and emotional difficulties can affect concentration, relationships and productivity.</p>
+                <p style="margin-top: 8px;">Better You works with organisations to provide employee counselling and wellness support, creating a supportive environment where employees can access help when they need it.</p>
+                
+                <h4 style="margin-top: 15px; color: var(--brand-brown-photo); font-size: 1.1rem;">Corporate Wellness Services:</h4>
+                <ul class="corporate-list">
+                    <li>Employee counselling</li>
+                    <li>Family counselling support</li>
+                    <li>Stress management</li>
+                    <li>Emotional well-being sessions</li>
+                    <li>Workplace wellness workshops</li>
+                    <li>Parenting & family support</li>
+                    <li>Career counselling</li>
+                    <li>Awareness programmes</li>
+                    <li>Individual & group sessions</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission Section -->
+    <section id="vision-mission">
+        <div class="vm-container">
+            <div class="vm-card">
+                <h3 class="serif-font">Our Vision</h3>
+                <p>To foster a compassionate community where mental health support is accessible, destigmatized, and tailored to empower individuals toward lasting emotional well-being and personal growth.</p>
+            </div>
+
+            <div class="vm-card">
+                <h3 class="serif-font">Our Mission</h3>
+                <p>To provide high-quality, person-centered mental wellness care through evidence-based practices, empathetic listening, and a safe environment for healing and self-discovery.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="section-header">
+            <p class="section-subtitle">Common Questions</p>
+            <h2 class="section-title" style="color: var(--brand-brown-photo);">Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-container">
+            <details class="faq-item" open>
+                <summary>When should I consider counselling?</summary>
+                <div class="faq-content">
+                    You don't need to wait until a problem becomes overwhelming. Counselling can be useful whenever you feel stuck, overwhelmed, confused, emotionally drained or unable to manage a situation on your own.
+                </div>
+            </details>
+            
+            <details class="faq-item">
+                <summary>Is counselling confidential?</summary>
+                <div class="faq-content">
+                    Counselling sessions are conducted with privacy and respect, subject to applicable professional and safety-related exceptions.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Do I need a diagnosis to see a counsellor?</summary>
+                <div class="faq-content">
+                    No. People seek counselling for many different reasons, including relationship difficulties, stress, personal growth, parenting concerns, career decisions and emotional challenges.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Can parents seek counselling for their children?</summary>
+                <div class="faq-content">
+                    Yes. Parents can discuss their concerns with a counsellor and explore appropriate support for their child.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>How many sessions will I need?</summary>
+                <div class="faq-content">
+                    There is no fixed number. The duration and frequency of counselling depend on the individual's concerns, goals and progress.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Are sessions available online?</summary>
+                <div class="faq-content">
+                    Yes, online counselling sessions are available to ensure convenient and confidential support wherever you are located.
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- Schedule a Session (Contact Section) -->
+    <section id="contact">
+        <div class="section-header">
+            <p class="section-subtitle">Get In Touch</p>
+            <h2 class="section-title">Schedule A Session</h2>
+        </div>
+        <div class="contact-container">
+            <div class="info-card">
+                <h3 class="serif-font" style="font-size: 1.8rem; margin-bottom: 25px; color: var(--brand-brown-photo);">Clinic Details</h3>
+                
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <strong>Address</strong>
+                        <p>Shop No.27, 1st floor, Poonam Estate Cluster-2, Mira Road (East), Mumbai-401107</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <strong>Contact Number</strong>
+                        <p>+91 70459 14020</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <strong>Email Address</strong>
+                        <p>therapywithby@gmail.com</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <div>
+                        <strong>Office Timings</strong>
+                        <p>Mon-Sat: 10.30 AM – 6:30 PM</p>
+                        <strong style="display:inline-block; margin-top:8px;">Session Timings</strong>
+                        <p>Mon, Tue, Thu, Fri: 6:00 PM – 10:00 PM</p>
+                        <p>Wed, Sat, Sun: 10:00 AM – 5:00 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3 class="serif-font" style="font-size: 1.8rem; margin-bottom: 20px; color: var(--brand-brown-photo);">Book an Appointment</h3>
+                
+                <form id="appointmentForm">
+                    <div class="form-group">
+                        <input type="text" id="fullName" name="name" placeholder="Your Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="description" name="message" rows="4" placeholder="Briefly describe what support you are looking for..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-send-request">Send Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript Handler for Google Sheets Integration -->
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwmBG_NZq-lJ_0nyOFuYYq3lp0xclnJsqb4EC7tPDmDoZU3soDkfsGLu6vIrjgZbIst/exec';
+        const form = document.getElementById('appointmentForm');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const btn = form.querySelector('button');
+            btn.disabled = true;
+            btn.innerText = 'Sending...';
+
+            const payload = {
+                fullName: document.getElementById('fullName').value,
+                phone: document.getElementById('phone').value,
+                description: document.getElementById('description').value
+            };
+
+            fetch(scriptURL, { 
+                method: 'POST', 
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+            .then(() => {
+                alert('Thank you! Your request has been recorded. We will contact you shortly.');
+                form.reset();
+                btn.disabled = false;
+                btn.innerText = 'Send Request';
+            })
+            .catch(error => {
+                alert('Error submitting form. Please try calling or WhatsApp-ing us directly.');
+                btn.disabled = false;
+                btn.innerText = 'Send Request';
+            });
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <img src="logo-white.png" alt="Better You White Logo" class="footer-logo-img">
+        <div class="footer-logo serif-font">BETTER YOU MIND WELLNESS CLINIC</div>
+        <p class="footer-tagline">Understand. Heal. Grow. Become a Better You.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Better You Mind Wellness Clinic. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
