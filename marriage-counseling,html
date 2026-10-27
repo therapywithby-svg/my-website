@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marriage & Couples Counseling | Better You Mind Wellness Clinic</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your main stylesheet -->
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Better You Mind Wellness</a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="marriage-counseling.html" class="active">Marriage Counseling</a>
+                <a href="corporate-wellness.html">Corporate Wellness</a>
+                <a href="index.html#contact" class="btn-nav">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="badge">Couples & Marital Support</span>
+            <h1>Rebuild Connection, Trust, and Communication in a Safe Space</h1>
+            <p class="hero-subtitle">Relationships go through seasons of distance and friction. You don't have to navigate the gridlock alone. Our specialized couples counseling offers a neutral, confidential environment to heal and reconnect.</p>
+            <div class="hero-cta">
+                <a href="index.html#appointment-form" class="btn btn-primary">Book a Couples Consultation</a>
+                <a href="https://wa.me/917045914020" class="btn btn-secondary" target="_blank">Chat on WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section class="section-light">
+        <div class="container">
+            <h2>Are You and Your Partner Experiencing...</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Communication Gridlocks</h3>
+                    <p>Feeling like every conversation escalates into an argument, or drifting into uncomfortable silence where nothing gets resolved.</p>
+                </div>
+                <div class="card">
+                    <h3>Emotional Disconnect</h3>
+                    <p>Living more like roommates than partners, feeling lonely even when you are in the same room together.</p>
+                </div>
+                <div class="card">
+                    <h3>Major Life Transitions</h3>
+                    <p>Navigating the intense stress of parenthood, career shifts, financial strain, or family pressures that strain the bond.</p>
+                </div>
+                <div class="card">
+                    <h3>Trust & Betrayal Recovery</h3>
+                    <p>Working through breaches of trust, emotional affairs, or past hurts that require careful, guided reconstruction.</p>
+                </div>
+                <div class="card">
+                    <h3>Pre-Marital Guidance</h3>
+                    <p>Laying a strong foundation before marriage by aligning on core values, finances, expectations, and conflict styles.</p>
+                </div>
+                <div class="card">
+                    <h3>Intimacy Challenges</h3>
+                    <p>Loss of physical or emotional intimacy, feeling undesired, or struggling with vulnerability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2026 Better You Mind Wellness Clinic. Shop No.27, 1st Floor, Poonam Estate Cluster-2, Mira Road (East).</p>
+        </div>
+    </footer>
+</body>
+</html>
