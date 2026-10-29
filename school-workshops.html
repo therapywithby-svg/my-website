@@ -1,203 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <link rel="icon" href="favicon.png" sizes="152x152" type="image/png">
     <link rel="apple-touch-icon" href="favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School & Youth Mental Wellness Programs | Better You Mind Wellness Clinic</title>
-    <!--Google Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-      :root {
-        --bg-main: #FFFFFF;
-        --brand-sage: #C6CFBE;
-        --brand-sage-dark: #A9B5A0;
-        --brand-brown-photo: #a48348;
-        --primary-dark: #2B2825;
-        --text-muted: #554D4A;
-        --border-color: #D8DFD2;
-        --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-        --transition: all 0.3s ease;
-      }
+        :root {
+            --bg-main: #FFFFFF;
+            --brand-sage: #C6CFBE;
+            --brand-sage-dark: #A9B5A0;
+            --brand-brown-photo: #a48348;
+            --primary-dark: #2B2825;
+            --text-muted: #554D4A;
+            --border-color: #D8DFD2;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
 
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
-      body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-main); color: var(--primary-dark); line-height: 1.7; }
-      h1, h2, h3, h4, .serif-font { font-family: 'Cormorant Garamond', serif; font-weight: 700; }
-      a { text-decoration: none; color: inherit; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-main); color: var(--primary-dark); line-height: 1.7; }
+        h1, h2, h3, h4, .serif-font { font-family: 'Cormorant Garamond', serif; font-weight: 700; }
+        a { text-decoration: none; color: inherit; }
 
-      /* Top Bar */
-      .top-bar { background-color: var(--brand-sage); color: var(--primary-dark); padding: 8px 5%; font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-weight: 500; }
-      .top-bar-info { display: flex; gap: 20px; }
-      .top-bar-info i {color: var(--brand-brown-photo); margin-right: 6px; }
+        /* Top Bar */
+        .top-bar { background-color: var(--brand-sage); color: var(--primary-dark); padding: 8px 5%; font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-weight: 500; }
+        .top-bar-info { display: flex; gap: 20px; }
+        .top-bar-info i { color: var(--brand-brown-photo); margin-right: 6px; }
 
-      /* Navbar */
-      .navbar { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; padding: 12px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); }
-      .logo-container { display: flex; align-items: center; gap: 12px; }
-      .header-logo-img { height: 50px; width: auto; object-fit: contain; border-radius: 50%; }
-      .logo-text { display: flex; flex-direction: column; }
-      .logo-title { font-size: 1.3rem; letter-spacing: 1px; text-transform: uppercase; line-height: 1.1; color: var(--primary-dark); }
-      .logo-subtitle { font-size: 0.75rem; letter-spacing: 2px; color: var(--text-muted); text-transform: uppercase; }
-      .nav-links { display: flex; list-style: none; gap: 20px; align-items: center; flex-wrap: wrap; }
-      .nav-links a { font-size: 0.9rem; font-weight: 500; transition: var(--transition); color: var(--primary-dark); }
-      .nav-links a: hover { color: var(--brand-brown-photo); }
-      .btn-nav-book { background-color: var(--brand-sage); color: var(--primary-dark); padding: 10px 20px; border-radius: 30px; transition: var(--transition); border: 1px solid var(--brand-sage); display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 600; }
+        /* Navbar */
+        .navbar { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; padding: 12px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); }
+        .logo-container { display: flex; align-items: center; gap: 12px; }
+        .header-logo-img { height: 50px; width: auto; object-fit: contain; border-radius: 50%; }
+        .logo-text { display: flex; flex-direction: column; }
+        .logo-title { font-size: 1.3rem; letter-spacing: 1px; text-transform: uppercase; line-height: 1.1; color: var(--primary-dark); }
+        .logo-subtitle { font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); text-transform: uppercase; }
+        .nav-links { display: flex; list-style: none; gap: 15px; align-items: center; flex-wrap: wrap; }
+        .nav-links a { font-size: 0.85rem; font-weight: 500; transition: var(--transition); color: var(--primary-dark); }
+        .nav-links a:hover { color: var(--brand-brown-photo); }
+        .btn-nav-book { background-color: var(--brand-sage); color: var(--primary-dark); padding: 10px 20px; border-radius: 30px; transition: var(--transition); border: 1px solid var(--brand-sage); display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 600; }
 
-      /* Hero */
-      .hero { padding: 70px 5%; background: var(--brand-sage); text-align: center; max-width: 950px; margin: 40px auto; border-radius: 16px; }
-      .hero-subtitle { text-transform: uppercase; letter-spacing: 3px; color: var(--brand-brown-photo); font-size: 0.9rem; margin-bottom: 10px; font-weight: 700; }
-      .hero-title { font-size: 2.8rem; color: var(--primary-dark); line-height: 1.2rem; margin-bottom: 20px; }
-      .hero-desc { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        /* Hero */
+        .hero { padding: 70px 5%; background: var(--brand-sage); text-align: center; max-width: 950px; margin: 40px auto; border-radius: 16px; }
+        .hero-subtitle { text-transform: uppercase; letter-spacing: 3px; color: var(--brand-brown-photo); font-size: 0.9rem; margin-bottom: 10px; font-weight: 700; }
+        .hero-title { font-size: 2.8rem; color: var(--primary-dark); line-height: 1.2; margin-bottom: 20px; }
+        .hero-desc { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        
+        .hero-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .btn-hero-primary { background-color: var(--brand-brown-photo); color: #FFFFFF; padding: 10px 22px; border-radius: 30px; transition: var(--transition); border: 1px solid var(--brand-brown-photo); display: inline-block; font-size: 0.9rem; font-weight: 600; }
+        .btn-hero-primary:hover { background-color: #8a6c38; border-color: #8a6c38; }
+        .btn-hero-secondary { background: transparent; color: var(--primary-dark); border: 1px solid var(--primary-dark); padding: 10px 22px; border-radius: 30px; transition: var(--transition); display: inline-block; font-size: 0.9rem; font-weight: 600; }
+        .btn-hero-secondary:hover { background-color: var(--primary-dark); color: #FFFFFF; }
 
-      .hero-btns {
-        display: flex;
-        gap: 15px;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
+        /* Content Sections */
+        section { padding: 60px 5%; max-width: 1100px; margin: 0 auto; }
+        h2 { font-size: 2.2rem; color: var(--primary-dark); margin-bottom: 25px; text-align: center; }
+        .section-desc { text-align: center; max-width: 800px; margin: 0 auto 40px; color: var(--text-muted); font-size: 1.05rem; }
+        
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+        .card { background: #FFFFFF; padding: 35px 30px; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: var(--shadow); }
+        .card h3 { font-size: 1.4rem; margin-bottom: 15px; color: var(--brand-brown-photo); }
+        .card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px; }
+        
+        .card ul { list-style-type: none; display: flex; flex-direction: column; gap: 10px; }
+        .card ul li { position: relative; padding-left: 20px; font-size: 0.92rem; color: var(--text-muted); }
+        .card ul li strong { color: var(--primary-dark); }
+        .card ul li::before { content: "•"; color: var(--brand-brown-photo); font-weight: bold; font-size: 1.2rem; position: absolute; left: 0; top: -2px; }
 
-      .btn-hero-primary {
-        background-color: var(--brand-brown-photo);
-        color: #FFFFFF;
-        padding: 10px 22px;
-        border-radius: 30px;
-        transition: var(--transition);
-        border: 1px solid var(--brand-brown-photo);
-        display: inline-block;
-        font-size: 0.9rem;
-        font-weight: 600;
-      }
+        /* Why Partner Section */
+        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 20px; }
+        .why-card { background: #f9fbf8; padding: 30px; border-radius: 12px; border: 1px solid var(--border-color); text-align: left; }
+        .why-card h3 { font-size: 1.25rem; color: var(--primary-dark); margin-bottom: 10px; }
+        .why-card p { color: var(--text-muted); font-size: 0.95rem; margin: 0; }
 
-      .btn-hero-primary:hover {
-        background-color: #8a6c38;
-        border-color: #8a6c38;
-      }
+        /* CTA Box */
+        .cta-box { background: var(--brand-sage); border-radius: 16px; padding: 50px 30px; text-align: center; max-width: 900px; margin: 40px auto 80px; }
+        .cta-box h3 { font-size: 2rem; color: var(--primary-dark); margin-bottom: 15px; }
+        .cta-box p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 25px; }
 
-      .btn-hero-secondary {
-        background: transparent;
-        color: var(--primary-dark);
-        border: 1px solid var(--primary-dark);
-        padding: 10px 22px;
-        border-radius: 30px;
-        transition: var(--transition);
-        display: inline-block;
-        font-size: 0.9rem;
-        font-weight: 600;
-      }
-
-      .btn-hero-seondary:hover {
-        background-color: var(--primary-dark);
-        color:#FFFFFF;
-      }
-
-      /* Content Sections */
-      section { padding: 60px 5%; max-width: 1100px; margin: 0 auto; }
-      h2 { font-size: 2.2rem; color: var(--primary-dark); margin-bottom: 25px; text-align: center; }
-      .section-desc { text-align: center; max-width: 800px; margin:0 auto 40px; color: var(--text-muted); font-size: 1.05rem; }
-
-      .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
-      .card { background: #FFFFFF; padding: 35px 30px; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: var(--shadow); }
-      .card h3 { font-size: 1.4rem; margin-bottom: 15px; color: var(--brand-brown-photo); }
-      .card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px; }
-
-      .card ul {
-        list-style-type: none;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .card ul li {
-        position: relative;
-        padding-left: 20px;
-        font-size: 0.92rem;
-        color: var(--text-muted);
-      }
-
-      .card ul li strong {
-        color: var(--primary-dark);
-      }
-
-      .card ul li::before {
-        content: "•";
-        color: var(--brand-brown-photo);
-        font-weight: bold;
-        font-size: 1.2rem;
-        position: absolute;
-        left: 0;
-        top: -2px;
-      }
-
-      /* Why Partner Section */
-      .why-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 25px;
-        margin-top: 20px;
-      }
-
-      .why-card {
-        background: #f9fbf8;
-        padding: 30px;
-        border-radius: 12px;
-        border: 1px solid var(--border-color);
-        text-align: left;
-      }
-
-      .why-card h3 {
-        font-size: 1.25rem;
-        color: var(--primary-dark);
-        margin-bottom: 10px;
-      }
-
-      .why-card p {
-        color: var(--text-muted);
-        font-size: 0.95rem;
-        margin: 0;
-      }
-
-      /* CTA Box */
-      .cta-box {
-        background: var(--brand-sage);
-        border-radius: 16px;
-        padding: 50px 30px;
-        text-align: center;
-        max-width: 900px;
-        margin: 40px auto 80px;
-      }
-
-      .cta-box h3 {
-        font-size: 2rem;
-        color: var(--primary-dark);
-        margin-bottom: 15px;
-      }
-
-      .cta-box p {
-        color: var(--text-muted);
-        font-size: 1.05rem;
-        margin-bottom: 25px;
-      }
-
-      /* Footer */
-      footer { background: var(--brand-brown-photo); color: #FFFFFF; padding: 50px 5% 20px; text-align: center; }
-      .footer-logo-img { height: 80px; width: auto; object-fit: contain; margin-bottom: 15px; }
-      .footer-logo { font-size: 1.5rem; color: #FFFFFF; margin-bottom: 5px; }
-      .footer-tagline { color: #F8FAF7; font-style: italic; margin-bottom: 25px; }
-      .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 20px; font-size: 0.85rem; color: #F3EBE1; }
-
-      .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25D366; color: #FFF; border-radius: 50px; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 2px 5px 15px ragba(0,0,0,0.2); z-index: 1000; text-decoration: none; transition: transform 0.3s ease; }
-      .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; }
+        /* Footer */
+        footer { background: var(--brand-brown-photo); color: #FFFFFF; padding: 50px 5% 20px; text-align: center; }
+        .footer-logo-img { height: 80px; width: auto; object-fit: contain; margin-bottom: 15px; }
+        .footer-logo { font-size: 1.5rem; color: #FFFFFF; margin-bottom: 5px; }
+        .footer-tagline { color: #F8FAF7; font-style: italic; margin-bottom: 25px; }
+        .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 20px; font-size: 0.85rem; color: #F3EBE1; }
+        
+        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25D366; color: #FFF; border-radius: 50px; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 2px 5px 15px rgba(0,0,0,0.2); z-index: 1000; text-decoration: none; transition: transform 0.3s ease; }
+        .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; }
     </style>
-  </head>
-  <body>
+</head>
+<body>
 
-    <!--Floating Whatsapp Button -->
+    <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/+917045914020?text=Hello!%20I%20would%20like%20to%20know%20more%20about%20School%20Wellness%20Programs." class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
@@ -220,13 +123,13 @@
                 <span class="logo-subtitle">Mind Wellness Clinic</span>
             </div>
         </div>
-       <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="marriage-counseling.html">Marriage Counseling</a></li>
-    <li><a href="corporate-wellness.html">Corporate Wellness</a></li>
-    <li><a href="school-workshops.html">School Programs</a></li>
-    <li><a href="index.html#contact" class="btn-nav-book">Book Session <i class="fa-solid fa-arrow-right"></i></a></li>
-</ul>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="marriage-counseling.html">Marriage Counseling</a></li>
+            <li><a href="corporate-wellness.html">Corporate Wellness</a></li>
+            <li><a href="school-workshops.html" style="color: var(--brand-brown-photo); font-weight: 700;">School Programs</a></li>
+            <li><a href="index.html#contact" class="btn-nav-book">Book Session <i class="fa-solid fa-arrow-right"></i></a></li>
+        </ul>
     </nav>
 
     <!-- Hero Section -->
