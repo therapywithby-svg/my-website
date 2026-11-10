@@ -165,6 +165,38 @@
             transform: translateX(3px);
         }
 
+        /* Language Switcher */
+        .lang-switch-container {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(0, 0, 0, 0.04);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            transition: var(--transition);
+            padding: 2px 4px;
+        }
+
+        .lang-btn.active, .lang-btn:hover {
+            color: var(--brand-brown-photo);
+            font-weight: 700;
+        }
+
+        .lang-divider {
+            color: var(--border-color);
+        }
+
         /* Hero Section */
         .hero {
             padding: 80px 5%;
@@ -813,7 +845,6 @@
         }
 
     @media (max-width: 850px) {
-            /* Navbar Mobile Layout */
             .navbar {
                 flex-direction: column;
                 gap: 15px;
@@ -839,8 +870,7 @@
                 padding: 8px 16px;
                 font-size: 0.85rem;
             }
-
-            /*Top Bar Mobile Stack */
+        
             .top-bar {
                 justify-content: center;
                 text-align: center;
@@ -851,7 +881,6 @@
                 gap: 5px;
             }
 
-            /*Cards & Containers Responsiveness */
             .hero-title {
                 font-size: 2.2rem;
             }
@@ -919,7 +948,6 @@
             background-color: #e2e8f0;
             border-color: #64748b;
         }
-        
     </style>
 </head>
 <body>
@@ -927,7 +955,7 @@
   <!-- Top Emergency Crisis Bar-->
     <div class="top-crisis-bar">
         <div class="top-crisis-container">
-            <p class="top-crisis-text">
+            <p class="top-crisis-text" data-i18n="crisis.text">
             <strong>In Crisis Right Now?</strong> We are an outpatient clinic and do not provide 24/7 crisis service. In case of emergency, visit your nearest emergency room or call:
         </p>
         <div class="top-crisis-buttons">
@@ -949,10 +977,10 @@
     <div class="top-bar">
         <div class="top-bar-info">
             <span><i class="fa-solid fa-phone"></i> +91 70459 14020</span>
-            <span><i class="fa-solid fa-location-dot"></i> Mira Road, Mumbai 401107</span>
+            <span><i class="fa-solid fa-location-dot"></i> <span data-i18n="topbar.address">Mira Road, Mumbai 401107</span></span>
         </div>
         <div>
-            <span><i class="fa-solid fa-heart"></i> Confidential & Compassionate Care</span>
+            <span><i class="fa-solid fa-heart"></i> <span data-i18n="topbar.care">Confidential & Compassionate Care</span></span>
         </div>
     </div>
 
@@ -966,27 +994,32 @@
             </div>
         </div>
         <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#founder">Founder</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="school-workshops.html">School Programs</a></li>
-            <li><a href="marriage-counseling.html">Marriage</a></li>
-            <li><a href="corporate-wellness.html">Corporate</a></li>
-            <li><a href="#vision-mission">Philosophy</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contact" class="btn-nav-book">Book Session <i class="fa-solid fa-arrow-right"></i></a></li>
+            <li><a href="#about" data-i18n="nav.about">About</a></li>
+            <li><a href="#founder" data-i18n="nav.founder">Founder</a></li>
+            <li><a href="#services" data-i18n="nav.services">Services</a></li>
+            <li><a href="school-workshops.html" data-i18n="nav.school">School Programs</a></li>
+            <li><a href="marriage-counseling.html" data-i18n="nav.marriage">Marriage</a></li>
+            <li><a href="corporate-wellness.html" data-i18n="nav.corporate">Corporate</a></li>
+            <li><a href="#vision-mission" data-i18n="nav.philosophy">Philosophy</a></li>
+            <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+            <li><a href="#contact" class="btn-nav-book"><span data-i18n="nav.book">Book Session</span> <i class="fa-solid fa-arrow-right"></i></a></li>
+            <li class="lang-switch-container">
+                <button onclick="setLanguage('en')" id="lang-en" class="lang-btn active">EN</button>
+                <span class="lang-divider">|</span>
+                <button onclick="setLanguage('hi')" id="lang-hi" class="lang-btn">हिंदी</button>
+            </li>
         </ul>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-text">
-            <p class="hero-subtitle">Better You Mind Wellness Clinic</p>
-            <h1 class="hero-title serif-font">A Safe Space to Understand, Heal and Grow</h1>
-            <p class="hero-desc">Dedicated to helping individuals, couples, and families navigate life's emotional, relational, and personal challenges in a confidential, non-judgemental environment.</p>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">Better You Mind Wellness Clinic</p>
+            <h1 class="hero-title serif-font" data-i18n="hero.title">A Safe Space to Understand, Heal and Grow</h1>
+            <p class="hero-desc" data-i18n="hero.desc">Dedicated to helping individuals, couples, and families navigate life's emotional, relational, and personal challenges in a confidential, non-judgemental environment.</p>
             <div class="hero-btns">
-                <a href="#contact" class="btn-hero-primary">Book a Consultation</a>
-                <a href="#services" class="btn-hero-secondary">Explore Services</a>
+                <a href="#contact" class="btn-hero-primary" data-i18n="hero.btnPrimary">Book a Consultation</a>
+                <a href="#services" class="btn-hero-secondary" data-i18n="hero.btnSecondary">Explore Services</a>
             </div>
         </div>
 
@@ -998,10 +1031,10 @@
     <!-- About Section -->
     <section id="about">
         <div class="about-text-content">
-            <h2 class="serif-font">Our Person-Centred Approach</h2>
-            <p>At Better You Mind Wellness Clinic, we believe that understanding your past and present is key to shaping a fulfilling future. We provide a space where you can feel heard and valued.</p>
-            <p>Led by Seena Simon, our clinic in Mira Road, Mumbai, focuses on empathy, authenticity, and collaboration.</p>
-            <p>Whether you're seeking guidance for anxiety, relationship issues, or personal development, we tailor our approach to meet your unique needs—empowering you with the insights and tools to thrive.</p>
+            <h2 class="serif-font" data-i18n="about.title">Our Person-Centred Approach</h2>
+            <p data-i18n="about.p1">At Better You Mind Wellness Clinic, we believe that understanding your past and present is key to shaping a fulfilling future. We provide a space where you can feel heard and valued.</p>
+            <p data-i18n="about.p2">Led by Seena Simon, our clinic in Mira Road, Mumbai, focuses on empathy, authenticity, and collaboration.</p>
+            <p data-i18n="about.p3">Whether you're seeking guidance for anxiety, relationship issues, or personal development, we tailor our approach to meet your unique needs—empowering you with the insights and tools to thrive.</p>
         </div>
         <div class="about-image-container">
             <img src="about.png" alt="Active Listening at Better You Clinic" class="about-clinic-photo">
@@ -1012,107 +1045,107 @@
     <section id="founder">
         <div class="founder-container">
             <div class="founder-img-box">
-                <p class="sub-title">MEET OUR FOUNDER</p>
-                <h2 class="founder-name serif-font">Seena Simon</h2>
+                <p class="sub-title" data-i18n="founder.sub">MEET OUR FOUNDER</p>
+                <h2 class="founder-name serif-font" data-i18n="founder.name">Seena Simon</h2>
                 <div class="gold-divider"></div>
                 <img src="founder.png" alt="Seena Simon - Founder" class="founder-photo">
                 <p style="font-size: 0.9rem; color: #FFFFFF; margin-top: 5px;">Founder & Lead Therapist</p>
                 <div style="margin-top: 15px;">
-                    <span class="founder-tag" style="background-color: rgba(255,255,255,0.2);">20+ Years Experience</span>
-                    <span class="founder-tag" style="background-color: rgba(255,255,255,0.2);">20,000+ Practice Hours</span>
+                    <span class="founder-tag" style="background-color: rgba(255,255,255,0.2);" data-i18n="founder.exp1">20+ Years Experience</span>
+                    <span class="founder-tag" style="background-color: rgba(255,255,255,0.2);" data-i18n="founder.exp2">20,000+ Practice Hours</span>
                 </div>
             </div>
 
             <div class="founder-info-content">
-                <span class="founder-tag" style="align-self: flex-start;">Post Graduate in Counselling Psychology</span>
-                <h3 class="serif-font" style="font-size: 1.8rem; margin: 10px 0 15px; color: var(--brand-brown-photo);">Aftercare Specialist & Talk Therapist</h3>
-                <p style="color: var(--text-muted);">Specializing in supporting clients facing the effects of Trauma, Anxiety, Depression, and Sleep Disorders. Her extensive training in Cognitive Behavioral Therapy (CBT) equips her to address intricate thought and emotion patterns.</p>
-                <p style="margin-top: 12px; font-size: 0.95rem; color: var(--text-muted);">
+                <span class="founder-tag" style="align-self: flex-start;" data-i18n="founder.degree">Post Graduate in Counselling Psychology</span>
+                <h3 class="serif-font" style="font-size: 1.8rem; margin: 10px 0 15px; color: var(--brand-brown-photo);" data-i18n="founder.specialtyTitle">Aftercare Specialist & Talk Therapist</h3>
+                <p style="color: var(--text-muted);" data-i18n="founder.desc">Specializing in supporting clients facing the effects of Trauma, Anxiety, Depression, and Sleep Disorders. Her extensive training in Cognitive Behavioral Therapy (CBT) equips her to address intricate thought and emotion patterns.</p>
+                <p style="margin-top: 12px; font-size: 0.95rem; color: var(--text-muted);" data-i18n="founder.expertise">
                     <strong>Specialized Expertise:</strong> TFCBT, HIV Counselling, ACT, REBT, Gestalt Therapy, Psychological Tests, Couples Counselling, and Career Counselling.
                 </p>
                 
                 <div class="founder-words">
-                    <p><strong>"Through this Clinic, my attempt is to help you understand emotions behind behavior, identify root causes, treat Adverse Childhood Experiences, and learn healthy ways to resolve conflicts."</strong></p>
+                    <p data-i18n="founder.quote"><strong>"Through this Clinic, my attempt is to help you understand emotions behind behavior, identify root causes, treat Adverse Childhood Experiences, and learn healthy ways to resolve conflicts."</strong></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+        <!-- Services Section -->
     <section id="services">
         <div class="section-header">
-            <p class="section-subtitle">How We Help</p>
-            <h2 class="section-title">Our Counselling Services</h2>
+            <p class="section-subtitle" data-i18n="services.sub">How We Help</p>
+            <h2 class="section-title" data-i18n="services.title">Our Counselling Services</h2>
         </div>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon"><i class="fa-solid fa-user"></i></div>
-                <h3>Individual Counselling</h3>
-                <p>Support for resolving interpersonal conflicts, relationship issues, personal, academic, or career challenges through deep conversation.</p>
+                <h3 data-i18n="services.individual.title">Individual Counselling</h3>
+                <p data-i18n="services.individual.desc">Support for resolving interpersonal conflicts, relationship issues, personal, academic, or career challenges through deep conversation.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fa-solid fa-heart"></i></div>
-                <h3>Couples & Relationship</h3>
-                <p>Resolving marital issues through lessons of grace, forgiveness, and sacrificial love. Shifting perspective to "what can I give rather than get."</p>
-                <!-- Add this link -->
+                <h3 data-i18n="services.couples.title">Couples & Relationship</h3>
+                <p data-i18n="services.couples.desc">Resolving marital issues through lessons of grace, forgiveness, and sacrificial love. Shifting perspective to "what can I give rather than get."</p>
                 <div style="margin-top: 15px;">
-                    <a href="marriage-counseling.html" style="color: var(--brand-brown-photo); font-weight: 600; font-size: 0.9rem;">Read More &rarr;</a>
+                    <a href="marriage-counseling.html" style="color: var(--brand-brown-photo); font-weight: 600; font-size: 0.9rem;" data-i18n="services.couples.readMore">Read More &rarr;</a>
                 </div>
             </div>
             
             <div class="service-card">
                 <div class="service-icon"><i class="fa-solid fa-people-roof"></i></div>
-                <h3>For Children & Families</h3>
-                <p>When a child is struggling, the whole family is affected. Children's emotional well-being can influence the entire family environment. Similarly, family stress can affect a child's confidence, behaviour and development.</p>
-                <p style="margin-top: 8px;">At Better You, we look at the individual within the context of their family and environment, helping children and parents understand each other better. We also believe that supporting parents is an important part of supporting children.</p>
+                <h3 data-i18n="services.family.title">For Children & Families</h3>
+                <p data-i18n="services.family.p1">When a child is struggling, the whole family is affected. Children's emotional well-being can influence the entire family environment. Similarly, family stress can affect a child's confidence, behaviour and development.</p>
+                <p style="margin-top: 8px;" data-i18n="services.family.p2">At Better You, we look at the individual within the context of their family and environment, helping children and parents understand each other better. We also believe that supporting parents is an important part of supporting children.</p>
             </div>
 
             <div class="service-card">
                 <div class="service-icon"><i class="fa-solid fa-laptop"></i></div>
-                <h3>Online Counselling</h3>
-                <p>Convenient and confidential online therapy sessions so professional mental health support is always just a conversation away.</p>
+                <h3 data-i18n="services.online.title">Online Counselling</h3>
+                <p data-i18n="services.online.desc">Convenient and confidential online therapy sessions so professional mental health support is always just a conversation away.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fa-solid fa-compass"></i></div>
-                <h3>Career Counselling</h3>
-                <p>Guidance for students and adults to understand their strengths, explore professional options, and make confident career choices.</p>
+                <h3 data-i18n="services.career.title">Career Counselling</h3>
+                <p data-i18n="services.career.desc">Guidance for students and adults to understand their strengths, explore professional options, and make confident career choices.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fa-solid fa-hands-holding-child"></i></div>
-                <h3>Adolescent Support</h3>
-                <p>Age-appropriate counselling navigating academic pressure, identity, emotional challenges, and major life transitions.</p>
+                <h3 data-i18n="services.adolescent.title">Adolescent Support</h3>
+                <p data-i18n="services.adolescent.desc">Age-appropriate counselling navigating academic pressure, identity, emotional challenges, and major life transitions.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fa-solid fa-cloud-sun"></i></div>
-                <h3>Grief & Loss Counselling</h3>
-                <p>Compassionate care guiding individuals through bereavement, emotional pain, and processing deep loss.</p>
+                <h3 data-i18n="services.grief.title">Grief & Loss Counselling</h3>
+                <p data-i18n="services.grief.desc">Compassionate care guiding individuals through bereavement, emotional pain, and processing deep loss.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fa-solid fa-brain"></i></div>
-                <h3>Mental Health Programs</h3>
-                <p>Structured programs to address anxiety, stress management, sleep disorders, and emotional resilience building.</p>
+                <h3 data-i18n="services.programs.title">Mental Health Programs</h3>
+                <p data-i18n="services.programs.desc">Structured programs to address anxiety, stress management, sleep disorders, and emotional resilience building.</p>
             </div>
 
             <div class="service-card featured-card">
                 <div class="service-icon"><i class="fa-solid fa-building-user"></i></div>
-                <h3>Corporate Counselling — For Organisations</h3>
-                <p><strong>Building Healthier, More Supported Workplaces:</strong> Employees carry different aspects of their lives into the workplace. Personal stress, family concerns and emotional difficulties can affect concentration, relationships and productivity.</p>
-                <p style="margin-top: 8px;">Better You works with organisations to provide employee counselling and wellness support, creating a supportive environment where employees can access help when they need it.</p>
+                <h3 data-i18n="services.corporate.title">Corporate Counselling — For Organisations</h3>
+                <p data-i18n="services.corporate.p1"><strong>Building Healthier, More Supported Workplaces:</strong> Employees carry different aspects of their lives into the workplace. Personal stress, family concerns and emotional difficulties can affect concentration, relationships and productivity.</p>
+                <p style="margin-top: 8px;" data-i18n="services.corporate.p2">Better You works with organisations to provide employee counselling and wellness support, creating a supportive environment where employees can access help when they need it.</p>
                 
-                <h4 style="margin-top: 15px; color: var(--brand-brown-photo); font-size: 1.1rem;">Corporate Wellness Services:</h4>
+                <h4 style="margin-top: 15px; color: var(--brand-brown-photo); font-size: 1.1rem;" data-i18n="services.corporate.listTitle">Corporate Wellness Services:</h4>
                 <ul class="corporate-list">
-                    <li>Employee counselling</li>
-                    <li>Family counselling support</li>
-                    <li>Stress management</li>
-                    <li>Emotional well-being sessions</li>
-                    <li>Workplace wellness workshops</li>
-                    <li>Parenting & family support</li>
-                    <li>Career counselling</li>
-                    <li>Awareness programmes</li>
-                    <li>Individual & group sessions</li>
+                    <li data-i18n="services.corporate.li1">Employee counselling</li>
+                    <li data-i18n="services.corporate.li2">Family counselling support</li>
+                    <li data-i18n="services.corporate.li3">Stress management</li>
+                    <li data-i18n="services.corporate.li4">Emotional well-being sessions</li>
+                    <li data-i18n="services.corporate.li5">Workplace wellness workshops</li>
+                    <li data-i18n="services.corporate.li6">Parenting & family support</li>
+                    <li data-i18n="services.corporate.li7">Career counselling</li>
+                    <li data-i18n="services.corporate.li8">Awareness programmes</li>
+                    <li data-i18n="services.corporate.li9">Individual & group sessions</li>
                 </ul>
                 <div style="margin-top: 20px;">
-                    <a href="corporate-wellness.html" class="btn-hero-primary" style="display: inline-block; padding: 8px 16px; font-size: 0.85rem;">View Corporate Programs &rarr;</a>
+                    <a href="corporate-wellness.html" class="btn-hero-primary" style="display: inline-block; padding: 8px 16px; font-size: 0.85rem;" data-i18n="services.corporate.btn">View Corporate Programs &rarr;</a>
+                </div>
             </div>
         </div>
     </section>
@@ -1121,13 +1154,13 @@
     <section id="vision-mission">
         <div class="vm-container">
             <div class="vm-card">
-                <h3 class="serif-font">Our Vision</h3>
-                <p>To foster a compassionate community where mental health support is accessible, destigmatized, and tailored to empower individuals toward lasting emotional well-being and personal growth.</p>
+                <h3 class="serif-font" data-i18n="philosophy.visionTitle">Our Vision</h3>
+                <p data-i18n="philosophy.visionDesc">To foster a compassionate community where mental health support is accessible, destigmatized, and tailored to empower individuals toward lasting emotional well-being and personal growth.</p>
             </div>
 
             <div class="vm-card">
-                <h3 class="serif-font">Our Mission</h3>
-                <p>To provide high-quality, person-centered mental wellness care through evidence-based practices, empathetic listening, and a safe environment for healing and self-discovery.</p>
+                <h3 class="serif-font" data-i18n="philosophy.missionTitle">Our Mission</h3>
+                <p data-i18n="philosophy.missionDesc">To provide high-quality, person-centered mental wellness care through evidence-based practices, empathetic listening, and a safe environment for healing and self-discovery.</p>
             </div>
         </div>
     </section>
@@ -1135,48 +1168,48 @@
     <!-- FAQ Section -->
     <section id="faq">
         <div class="section-header">
-            <p class="section-subtitle">Common Questions</p>
-            <h2 class="section-title" style="color: var(--brand-brown-photo);">Frequently Asked Questions</h2>
+            <p class="section-subtitle" data-i18n="faq.sub">Common Questions</p>
+            <h2 class="section-title" style="color: var(--brand-brown-photo);" data-i18n="faq.title">Frequently Asked Questions</h2>
         </div>
         <div class="faq-container">
             <details class="faq-item" open>
-                <summary>When should I consider counselling?</summary>
-                <div class="faq-content">
+                <summary data-i18n="faq.q1">When should I consider counselling?</summary>
+                <div class="faq-content" data-i18n="faq.a1">
                     You don't need to wait until a problem becomes overwhelming. Counselling can be useful whenever you feel stuck, overwhelmed, confused, emotionally drained or unable to manage a situation on your own.
                 </div>
             </details>
             
             <details class="faq-item">
-                <summary>Is counselling confidential?</summary>
-                <div class="faq-content">
+                <summary data-i18n="faq.q2">Is counselling confidential?</summary>
+                <div class="faq-content" data-i18n="faq.a2">
                     Counselling sessions are conducted with privacy and respect, subject to applicable professional and safety-related exceptions.
                 </div>
             </details>
 
             <details class="faq-item">
-                <summary>Do I need a diagnosis to see a counsellor?</summary>
-                <div class="faq-content">
+                <summary data-i18n="faq.q3">Do I need a diagnosis to see a counsellor?</summary>
+                <div class="faq-content" data-i18n="faq.a3">
                     No. People seek counselling for many different reasons, including relationship difficulties, stress, personal growth, parenting concerns, career decisions and emotional challenges.
                 </div>
             </details>
 
             <details class="faq-item">
-                <summary>Can parents seek counselling for their children?</summary>
-                <div class="faq-content">
+                <summary data-i18n="faq.q4">Can parents seek counselling for their children?</summary>
+                <div class="faq-content" data-i18n="faq.a4">
                     Yes. Parents can discuss their concerns with a counsellor and explore appropriate support for their child.
                 </div>
             </details>
 
             <details class="faq-item">
-                <summary>How many sessions will I need?</summary>
-                <div class="faq-content">
+                <summary data-i18n="faq.q5">How many sessions will I need?</summary>
+                <div class="faq-content" data-i18n="faq.a5">
                     There is no fixed number. The duration and frequency of counselling depend on the individual's concerns, goals and progress.
                 </div>
             </details>
 
             <details class="faq-item">
-                <summary>Are sessions available online?</summary>
-                <div class="faq-content">
+                <summary data-i18n="faq.q6">Are sessions available online?</summary>
+                <div class="faq-content" data-i18n="faq.a6">
                     Yes, online counselling sessions are available to ensure convenient and confidential support wherever you are located.
                 </div>
             </details>
@@ -1186,25 +1219,25 @@
     <!-- Schedule a Session (Contact Section) -->
     <section id="contact">
         <div class="section-header">
-            <p class="section-subtitle">Get In Touch</p>
-            <h2 class="section-title">Schedule A Session</h2>
+            <p class="section-subtitle" data-i18n="contact.sub">Get In Touch</p>
+            <h2 class="section-title" data-i18n="contact.title">Schedule A Session</h2>
         </div>
         <div class="contact-container">
             <div class="info-card">
-                <h3 class="serif-font" style="font-size: 1.8rem; margin-bottom: 25px; color: var(--brand-brown-photo);">Clinic Details</h3>
+                <h3 class="serif-font" style="font-size: 1.8rem; margin-bottom: 25px; color: var(--brand-brown-photo);" data-i18n="contact.clinicTitle">Clinic Details</h3>
                 
                 <div class="info-item">
                     <i class="fa-solid fa-location-dot"></i>
                     <div>
-                        <strong>Address</strong>
-                        <p>Shop No.27, 1st floor, Poonam Estate Cluster-2, Mira Road (East), Mumbai-401107</p>
+                        <strong data-i18n="contact.addressLabel">Address</strong>
+                        <p data-i18n="contact.address">Shop No.27, 1st floor, Poonam Estate Cluster-2, Mira Road (East), Mumbai-401107</p>
                     </div>
                 </div>
 
                 <div class="info-item">
                     <i class="fa-solid fa-phone"></i>
                     <div>
-                        <strong>Contact Number</strong>
+                        <strong data-i18n="contact.phoneLabel">Contact Number</strong>
                         <p>+91 70459 14020</p>
                     </div>
                 </div>
@@ -1212,7 +1245,7 @@
                 <div class="info-item">
                     <i class="fa-solid fa-envelope"></i>
                     <div>
-                        <strong>Email Address</strong>
+                        <strong data-i18n="contact.emailLabel">Email Address</strong>
                         <p>therapywithby@gmail.com</p>
                     </div>
                 </div>
@@ -1220,29 +1253,29 @@
                 <div class="info-item">
                     <i class="fa-solid fa-clock"></i>
                     <div>
-                        <strong>Office Timings</strong>
-                        <p>Mon-Sat: 10.30 AM – 6:30 PM</p>
-                        <strong style="display:inline-block; margin-top:8px;">Session Timings</strong>
-                        <p>Mon, Tue, Thu, Fri: 6:00 PM – 10:00 PM</p>
-                        <p>Wed, Sat, Sun: 10:00 AM – 5:00 PM</p>
+                        <strong data-i18n="contact.timingLabel">Office Timings</strong>
+                        <p data-i18n="contact.officeHours">Mon-Sat: 10.30 AM – 6:30 PM</p>
+                        <strong style="display:inline-block; margin-top:8px;" data-i18n="contact.sessionLabel">Session Timings</strong>
+                        <p data-i18n="contact.sessionHours1">Mon, Tue, Thu, Fri: 6:00 PM – 10:00 PM</p>
+                        <p data-i18n="contact.sessionHours2">Wed, Sat, Sun: 10:00 AM – 5:00 PM</p>
                     </div>
                 </div>
             </div>
 
             <div class="info-card">
-                <h3 class="serif-font" style="font-size: 1.8rem; margin-bottom: 20px; color: var(--brand-brown-photo);">Book an Appointment</h3>
+                <h3 class="serif-font" style="font-size: 1.8rem; margin-bottom: 20px; color: var(--brand-brown-photo);" data-i18n="contact.formTitle">Book an Appointment</h3>
                 
                 <form id="appointmentForm">
                     <div class="form-group">
-                        <input type="text" id="fullName" name="name" placeholder="Your Full Name" required>
+                        <input type="text" id="fullName" name="name" placeholder="Your Full Name" data-i18n-placeholder="contact.namePlaceholder" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" data-i18n-placeholder="contact.phonePlaceholder" required>
                     </div>
                     <div class="form-group">
-                        <textarea id="description" name="message" rows="4" placeholder="Briefly describe what support you are looking for..." required></textarea>
+                        <textarea id="description" name="message" rows="4" placeholder="Briefly describe what support you are looking for..." data-i18n-placeholder="contact.msgPlaceholder" required></textarea>
                     </div>
-                    <button type="submit" class="btn-send-request">Send Request</button>
+                    <button type="submit" class="btn-send-request" data-i18n="contact.btnSend">Send Request</button>
                 </form>
             </div>
         </div>
@@ -1289,10 +1322,17 @@
     <footer>
         <img src="logo-white.png" alt="Better You White Logo" class="footer-logo-img">
         <div class="footer-logo serif-font">BETTER YOU MIND WELLNESS CLINIC</div>
-        <p class="footer-tagline">Understand. Heal. Grow. Become a Better You.</p>
+        <p class="footer-tagline" data-i18n="footer.tagline">Understand. Heal. Grow. Become a Better You.</p>
         <div class="footer-bottom">
-            <p>&copy; 2026 Better You Mind Wellness Clinic. All Rights Reserved.</p>
+            <p data-i18n="footer.copyright">&copy; 2026 Better You Mind Wellness Clinic. All Rights Reserved.</p>
         </div>
+    </footer>
+
+    <!-- Translation Scripts -->
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
     </footer>
 
 </body>
