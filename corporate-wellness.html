@@ -49,6 +49,38 @@
         .nav-links a:hover { color: var(--brand-brown-photo); }
         .btn-nav-book { background-color: var(--brand-sage); color: var(--primary-dark); padding: 10px 22px; border-radius: 30px; transition: var(--transition); border: 1px solid var(--brand-sage); display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 600; }
 
+        /* Language Switcher */
+        .lang-switch-container {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(0, 0, 0, 0.04);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            transition: var(--transition);
+            padding: 2px 4px;
+        }
+
+        .lang-btn.active, .lang-btn:hover {
+            color: var(--brand-brown-photo);
+            font-weight: 700;
+        }
+
+        .lang-divider {
+            color: var(--border-color);
+        }
+
         /* Hero */
         .hero { padding: 80px 5%; background: var(--brand-sage); text-align: center; max-width: 900px; margin: 40px auto; border-radius: 16px; }
         .hero-subtitle { text-transform: uppercase; letter-spacing: 3px; color: var(--brand-brown-photo); font-size: 0.9rem; margin-bottom: 10px; font-weight: 700; }
@@ -110,9 +142,9 @@
     <div class="top-bar">
         <div class="top-bar-info">
             <span><i class="fa-solid fa-phone"></i> +91 70459 14020</span>
-            <span><i class="fa-solid fa-location-dot"></i> Mira Road, Mumbai 401107</span>
+            <span><i class="fa-solid fa-location-dot"></i> <span data-i18n="topbar.address">Mira Road, Mumbai 401107</span></span>
         </div>
-        <div><span><i class="fa-solid fa-heart"></i> B2B & Workplace Well-Being</span></div>
+        <div><span><i class="fa-solid fa-heart"></i> <span data-i18n="corp.topbarWellness">B2B & Workplace Well-Being</span></span></div>
     </div>
 
     <!-- Navigation Header -->
@@ -124,42 +156,47 @@
                 <span class="logo-subtitle">Mind Wellness Clinic</span>
             </div>
         </div>
-<ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="marriage-counseling.html">Marriage Counseling</a></li>
-    <li><a href="corporate-wellness.html">Corporate Wellness</a></li>
-    <li><a href="school-workshops.html">School Programs</a></li>
-    <li><a href="index.html#contact" class="btn-nav-book">Book Session <i class="fa-solid fa-arrow-right"></i></a></li>
-</ul>
+        <ul class="nav-links">
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="marriage-counseling.html" data-i18n="nav.marriage">Marriage Counseling</a></li>
+            <li><a href="corporate-wellness.html" data-i18n="nav.corporate">Corporate Wellness</a></li>
+            <li><a href="school-workshops.html" data-i18n="nav.school">School Programs</a></li>
+            <li><a href="index.html#contact" class="btn-nav-book"><span data-i18n="nav.book">Book Session</span> <i class="fa-solid fa-arrow-right"></i></a></li>
+            <li class="lang-switch-container">
+                <button onclick="setLanguage('en')" id="lang-en" class="lang-btn active">EN</button>
+                <span class="lang-divider">|</span>
+                <button onclick="setLanguage('hi')" id="lang-hi" class="lang-btn">हिंदी</button>
+            </li>
+        </ul>
     </nav>
 
     <!-- Hero Section -->
     <div class="hero">
-        <p class="hero-subtitle">B2B & Workplace Well-Being</p>
-        <h1 class="hero-title serif-font">Supporting Employee Mental Health & Burnout Recovery</h1>
-        <p class="hero-desc">A thriving organization starts with the mental well-being of its people. We partner with companies to build supportive work cultures through employee assistance and workshops.</p>
-        <a href="mailto:therapywithby@gmail.com" class="btn-nav-book" style="background-color: var(--brand-brown-photo); color: #fff;">Email Corporate Team</a>
+        <p class="hero-subtitle" data-i18n="corp.heroSub">B2B & Workplace Well-Being</p>
+        <h1 class="hero-title serif-font" data-i18n="corp.heroTitle">Supporting Employee Mental Health & Burnout Recovery</h1>
+        <p class="hero-desc" data-i18n="corp.heroDesc">A thriving organization starts with the mental well-being of its people. We partner with companies to build supportive work cultures through employee assistance and workshops.</p>
+        <a href="mailto:therapywithby@gmail.com" class="btn-nav-book" style="background-color: var(--brand-brown-photo); color: #fff;" data-i18n="corp.emailBtn">Email Corporate Team</a>
     </div>
 
     <!-- Services Grid -->
     <section>
-        <h2>Our Corporate Wellness Solutions</h2>
+        <h2 data-i18n="corp.solutionsTitle">Our Corporate Wellness Solutions</h2>
         <div class="grid-2">
             <div class="card">
-                <h3>1. Employee Assistance Programs (EAP)</h3>
-                <p>Confidential, direct counseling access for team members struggling with personal, professional, or emotional challenges.</p>
+                <h3 data-i18n="corp.c1.title">1. Employee Assistance Programs (EAP)</h3>
+                <p data-i18n="corp.c1.desc">Confidential, direct counseling access for team members struggling with personal, professional, or emotional challenges.</p>
             </div>
             <div class="card">
-                <h3>2. Stress & Burnout Workshops</h3>
-                <p>Interactive, practical workshops for teams focused on stress regulation, emotional intelligence, and work-life boundaries.</p>
+                <h3 data-i18n="corp.c2.title">2. Stress & Burnout Workshops</h3>
+                <p data-i18n="corp.c2.desc">Interactive, practical workshops for teams focused on stress regulation, emotional intelligence, and work-life boundaries.</p>
             </div>
             <div class="card">
-                <h3>3. Executive & Leadership Coaching</h3>
-                <p>One-on-one mental wellness support for founders and managers handling high-stakes decision fatigue and leadership pressure.</p>
+                <h3 data-i18n="corp.c3.title">3. Executive & Leadership Coaching</h3>
+                <p data-i18n="corp.c3.desc">One-on-one mental wellness support for founders and managers handling high-stakes decision fatigue and leadership pressure.</p>
             </div>
             <div class="card">
-                <h3>4. Custom Wellness Retainers</h3>
-                <p>Tailored mental health packages designed around your company size, operational structure, and specific culture goals.</p>
+                <h3 data-i18n="corp.c4.title">4. Custom Wellness Retainers</h3>
+                <p data-i18n="corp.c4.desc">Tailored mental health packages designed around your company size, operational structure, and specific culture goals.</p>
             </div>
         </div>
     </section>
@@ -168,11 +205,14 @@
     <footer>
         <img src="logo-white.png" alt="Better You White Logo" class="footer-logo-img">
         <div class="footer-logo serif-font">BETTER YOU MIND WELLNESS CLINIC</div>
-        <p class="footer-tagline">Understand. Heal. Grow. Become a Better You.</p>
+        <p class="footer-tagline" data-i18n="footer.tagline">Understand. Heal. Grow. Become a Better You.</p>
         <div class="footer-bottom">
-            <p>&copy; 2026 Better You Mind Wellness Clinic. All Rights Reserved.</p>
+            <p data-i18n="footer.copyright">&copy; 2026 Better You Mind Wellness Clinic. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- Translation Scripts -->
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
