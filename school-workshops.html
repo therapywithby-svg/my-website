@@ -49,6 +49,38 @@
         .nav-links a:hover { color: var(--brand-brown-photo); }
         .btn-nav-book { background-color: var(--brand-sage); color: var(--primary-dark); padding: 10px 20px; border-radius: 30px; transition: var(--transition); border: 1px solid var(--brand-sage); display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 600; }
 
+        /* Language Switcher */
+        .lang-switch-container {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(0, 0, 0, 0.04);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            transition: var(--transition);
+            padding: 2px 4px;
+        }
+
+        .lang-btn.active, .lang-btn:hover {
+            color: var(--brand-brown-photo);
+            font-weight: 700;
+        }
+
+        .lang-divider {
+            color: var(--border-color);
+        }
+
         /* Hero */
         .hero { padding: 70px 5%; background: var(--brand-sage); text-align: center; max-width: 950px; margin: 40px auto; border-radius: 16px; }
         .hero-subtitle { text-transform: uppercase; letter-spacing: 3px; color: var(--brand-brown-photo); font-size: 0.9rem; margin-bottom: 10px; font-weight: 700; }
@@ -96,6 +128,13 @@
         
         .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25D366; color: #FFF; border-radius: 50px; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 2px 5px 15px rgba(0,0,0,0.2); z-index: 1000; text-decoration: none; transition: transform 0.3s ease; }
         .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; }
+
+        @media (max-width: 850px) {
+            .coord-card-grid {
+                grid-template-columns: 1fr !important;
+                padding: 25px !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -109,9 +148,9 @@
     <div class="top-bar">
         <div class="top-bar-info">
             <span><i class="fa-solid fa-phone"></i> +91 70459 14020</span>
-            <span><i class="fa-solid fa-location-dot"></i> Mira Road, Mumbai 401107</span>
+            <span><i class="fa-solid fa-location-dot"></i> <span data-i18n="topbar.address">Mira Road, Mumbai 401107</span></span>
         </div>
-        <div><span><i class="fa-solid fa-heart"></i> Institutional Outreach & Student Support</span></div>
+        <div><span><i class="fa-solid fa-heart"></i> <span data-i18n="school.topbarOutreach">Institutional Outreach & Student Support</span></span></div>
     </div>
 
     <!-- Navigation Header -->
@@ -124,70 +163,75 @@
             </div>
         </div>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="marriage-counseling.html">Marriage Counseling</a></li>
-            <li><a href="corporate-wellness.html">Corporate Wellness</a></li>
-            <li><a href="school-workshops.html" style="color: var(--brand-brown-photo); font-weight: 700;">School Programs</a></li>
-            <li><a href="index.html#contact" class="btn-nav-book">Book Session <i class="fa-solid fa-arrow-right"></i></a></li>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="marriage-counseling.html" data-i18n="nav.marriage">Marriage Counseling</a></li>
+            <li><a href="corporate-wellness.html" data-i18n="nav.corporate">Corporate Wellness</a></li>
+            <li><a href="school-workshops.html" style="color: var(--brand-brown-photo); font-weight: 700;" data-i18n="nav.school">School Programs</a></li>
+            <li><a href="index.html#contact" class="btn-nav-book"><span data-i18n="nav.book">Book Session</span> <i class="fa-solid fa-arrow-right"></i></a></li>
+            <li class="lang-switch-container">
+                <button onclick="setLanguage('en')" id="lang-en" class="lang-btn active">EN</button>
+                <span class="lang-divider">|</span>
+                <button onclick="setLanguage('hi')" id="lang-hi" class="lang-btn">हिंदी</button>
+            </li>
         </ul>
     </nav>
 
     <!-- Hero Section -->
     <div class="hero">
-        <p class="hero-subtitle">Institutional Outreach & Student Support</p>
-        <h1 class="hero-title serif-font">Nurturing Emotional Resilience in Students, Teachers, and Parents</h1>
-        <p class="hero-desc">A child’s emotional well-being shapes their entire world. We partner with schools to provide proactive, age-appropriate mental health workshops, emotional support frameworks, and faculty care.</p>
+        <p class="hero-subtitle" data-i18n="school.heroSub">Institutional Outreach & Student Support</p>
+        <h1 class="hero-title serif-font" data-i18n="school.heroTitle">Nurturing Emotional Resilience in Students, Teachers, and Parents</h1>
+        <p class="hero-desc" data-i18n="school.heroDesc">A child’s emotional well-being shapes their entire world. We partner with schools to provide proactive, age-appropriate mental health workshops, emotional support frameworks, and faculty care.</p>
         <div class="hero-btns">
-            <a href="index.html#contact" class="btn-hero-primary">Schedule an Introductory Meeting</a>
-            <a href="index.html#contact" class="btn-hero-secondary">Contact Our Team</a>
+            <a href="index.html#contact" class="btn-hero-primary" data-i18n="school.heroBtnPrimary">Schedule an Introductory Meeting</a>
+            <a href="index.html#contact" class="btn-hero-secondary" data-i18n="school.heroBtnSecondary">Contact Our Team</a>
         </div>
     </div>
 
     <!-- Why School-Based Mental Health Matters -->
     <section>
-        <h2>Why School-Based Mental Health Matters</h2>
-        <p class="section-desc">Students today navigate intense academic pressures, digital distractions, and social transitions. Often, behavioral changes or falling grades are surface signs of deeper emotional stress. By bringing professional, compassionate wellness programs directly into schools, we help catch challenges early and equip young minds with lifelong emotional toolkits.</p>
+        <h2 data-i18n="school.whyMattersTitle">Why School-Based Mental Health Matters</h2>
+        <p class="section-desc" data-i18n="school.whyMattersDesc">Students today navigate intense academic pressures, digital distractions, and social transitions. Often, behavioral changes or falling grades are surface signs of deeper emotional stress. By bringing professional, compassionate wellness programs directly into schools, we help catch challenges early and equip young minds with lifelong emotional toolkits.</p>
     </section>
 
     <!-- Core Offerings for Schools -->
     <section style="padding-top: 0;">
         <div style="text-align: center; margin-bottom: 40px;">
-            <p class="hero-subtitle">Comprehensive Care</p>
-            <h2 style="margin: 0;">Our Comprehensive School Programs</h2>
+            <p class="hero-subtitle" data-i18n="school.careSub">Comprehensive Care</p>
+            <h2 style="margin: 0;" data-i18n="school.programsTitle">Our Comprehensive School Programs</h2>
         </div>
         
         <div class="grid-3">
             <!-- For Students -->
             <div class="card">
-                <h3>1. For Students — Resilience & Life Skills Workshops</h3>
-                <p>Interactive, age-appropriate sessions designed to help students handle everyday pressures constructively:</p>
+                <h3 data-i18n="school.c1.title">1. For Students — Resilience & Life Skills Workshops</h3>
+                <p data-i18n="school.c1.desc">Interactive, age-appropriate sessions designed to help students handle everyday pressures constructively:</p>
                 <ul>
-                    <li><strong>Exam & Performance Anxiety:</strong> Practical techniques to manage stress, overcome perfectionism, and maintain healthy focus during testing seasons.</li>
-                    <li><strong>Emotional Regulation:</strong> Helping students understand the connection between emotions and behavior, identify triggers, and communicate feelings healthily.</li>
-                    <li><strong>Peer Dynamics & Healthy Boundaries:</strong> Navigating peer pressure, bullying, cyber-safety, and building positive social relationships.</li>
-                    <li><strong>Mindful Tech & Screen Balance:</strong> Managing digital burnout, social media comparison fatigue, and establishing healthy offline habits.</li>
+                    <li data-i18n="school.c1.li1"><strong>Exam & Performance Anxiety:</strong> Practical techniques to manage stress, overcome perfectionism, and maintain healthy focus during testing seasons.</li>
+                    <li data-i18n="school.c1.li2"><strong>Emotional Regulation:</strong> Helping students understand the connection between emotions and behavior, identify triggers, and communicate feelings healthily.</li>
+                    <li data-i18n="school.c1.li3"><strong>Peer Dynamics & Healthy Boundaries:</strong> Navigating peer pressure, bullying, cyber-safety, and building positive social relationships.</li>
+                    <li data-i18n="school.c1.li4"><strong>Mindful Tech & Screen Balance:</strong> Managing digital burnout, social media comparison fatigue, and establishing healthy offline habits.</li>
                 </ul>
             </div>
 
             <!-- For Teachers -->
             <div class="card">
-                <h3>2. For Teachers & Faculty — Educator Well-Being</h3>
-                <p>Teachers carry a heavy emotional load holding space for students every day. A supported educator makes for a healthier, more vibrant classroom:</p>
+                <h3 data-i18n="school.c2.title">2. For Teachers & Faculty — Educator Well-Being</h3>
+                <p data-i18n="school.c2.desc">Teachers carry a heavy emotional load holding space for students every day. A supported educator makes for a healthier, more vibrant classroom:</p>
                 <ul>
-                    <li><strong>Burnout & Compassion Fatigue Prevention:</strong> Recognizing early signs of chronic exhaustion and setting sustainable emotional boundaries.</li>
-                    <li><strong>Trauma-Informed Classroom Guidance:</strong> Equipping educators with empathetic tools to recognize signs of distress, anxiety, or trauma in students.</li>
-                    <li><strong>Stress Regulation Circles:</strong> Safe, confidential spaces for teaching staff to decompress and share practical coping mechanisms.</li>
+                    <li data-i18n="school.c2.li1"><strong>Burnout & Compassion Fatigue Prevention:</strong> Recognizing early signs of chronic exhaustion and setting sustainable emotional boundaries.</li>
+                    <li data-i18n="school.c2.li2"><strong>Trauma-Informed Classroom Guidance:</strong> Equipping educators with empathetic tools to recognize signs of distress, anxiety, or trauma in students.</li>
+                    <li data-i18n="school.c2.li3"><strong>Stress Regulation Circles:</strong> Safe, confidential spaces for teaching staff to decompress and share practical coping mechanisms.</li>
                 </ul>
             </div>
 
             <!-- For Parents -->
             <div class="card">
-                <h3>3. For Parents — Family Partnership Seminars</h3>
-                <p>Bridging the communication gap between home and school to ensure children feel secure on all fronts:</p>
+                <h3 data-i18n="school.c3.title">3. For Parents — Family Partnership Seminars</h3>
+                <p data-i18n="school.c3.desc">Bridging the communication gap between home and school to ensure children feel secure on all fronts:</p>
                 <ul>
-                    <li><strong>Decoding Adolescent Behavior:</strong> Understanding mood shifts, withdrawal, and emotional milestones during teenage years.</li>
-                    <li><strong>Open Communication at Home:</strong> Shifting from reactive discipline to active listening and trust-building.</li>
-                    <li><strong>Navigating Academic Transitions:</strong> Guiding children through board exams, stream choices, and future planning without adding pressure.</li>
+                    <li data-i18n="school.c3.li1"><strong>Decoding Adolescent Behavior:</strong> Understanding mood shifts, withdrawal, and emotional milestones during teenage years.</li>
+                    <li data-i18n="school.c3.li2"><strong>Open Communication at Home:</strong> Shifting from reactive discipline to active listening and trust-building.</li>
+                    <li data-i18n="school.c3.li3"><strong>Navigating Academic Transitions:</strong> Guiding children through board exams, stream choices, and future planning without adding pressure.</li>
                 </ul>
             </div>
         </div>
@@ -195,62 +239,62 @@
 
     <!-- Why Partner with Better You -->
     <section>
-        <h2>Why Partner with Better You?</h2>
+        <h2 data-i18n="school.whyPartnerTitle">Why Partner with Better You?</h2>
         <div class="why-grid">
             <div class="why-card">
-                <h3>Clinically Grounded & Ethical</h3>
-                <p>Led by experienced therapists specializing in child, adolescent, and family psychology under strict confidentiality and age-appropriate guidelines.</p>
+                <h3 data-i18n="school.p1.title">Clinically Grounded & Ethical</h3>
+                <p data-i18n="school.p1.desc">Led by experienced therapists specializing in child, adolescent, and family psychology under strict confidentiality and age-appropriate guidelines.</p>
             </div>
             <div class="why-card">
-                <h3>Proactive & Preventive</h3>
-                <p>Moving beyond crisis management to foster long-term emotional intelligence within the entire student body.</p>
+                <h3 data-i18n="school.p2.title">Proactive & Preventive</h3>
+                <p data-i18n="school.p2.desc">Moving beyond crisis management to foster long-term emotional intelligence within the entire student body.</p>
             </div>
             <div class="why-card">
-                <h3>Rooted in Our Community</h3>
-                <p>Based right here in Mira Road, we deeply understand the academic environment, board exam pressures, and cultural dynamics of student life across Mumbai.</p>
+                <h3 data-i18n="school.p3.title">Rooted in Our Community</h3>
+                <p data-i18n="school.p3.desc">Based right here in Mira Road, we deeply understand the academic environment, board exam pressures, and cultural dynamics of student life across Mumbai.</p>
             </div>
         </div>
     </section>
 
-<!-- Meet Your School Program Coordinator -->
+    <!-- Meet Your School Program Coordinator -->
     <section style="background-color: #f4f7f2; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
         <div style="text-align: center; margin-bottom: 40px;">
-            <p class="hero-subtitle">Dedicated Leadership</p>
-            <h2 style="margin: 0;">Meet Our School Program Coordinator</h2>
-            <p class="section-desc" style="margin-top: 10px;">Led by compassionate mental health professionals trained to connect meaningfully with young minds.</p>
+            <p class="hero-subtitle" data-i18n="school.coordSub">Dedicated Leadership</p>
+            <h2 style="margin: 0;" data-i18n="school.coordTitle">Meet Our School Program Coordinator</h2>
+            <p class="section-desc" style="margin-top: 10px;" data-i18n="school.coordHeaderDesc">Led by compassionate mental health professionals trained to connect meaningfully with young minds.</p>
         </div>
 
-        <div style="max-width: 950px; margin: 0 auto; background: #FFFFFF; padding: 40px; border-radius: 16px; border: 2px solid var(--brand-sage-dark); box-shadow: var(--shadow); display: grid; grid-template-columns: 280px 1fr; gap: 40px; align-items: center;">
+        <div class="coord-card-grid" style="max-width: 950px; margin: 0 auto; background: #FFFFFF; padding: 40px; border-radius: 16px; border: 2px solid var(--brand-sage-dark); box-shadow: var(--shadow); display: grid; grid-template-columns: 280px 1fr; gap: 40px; align-items: center;">
             
             <!-- Left: Founder-Style Portrait Box with Brown Accent -->
             <div style="text-align: center;">
                 <img src="Esther.jpeg" alt="Esther Simon - Program Coordinator" style="width: 100%; height: 320px; object-fit: cover; border-radius: 12px; border: 2px solid var(--brand-brown-photo); box-shadow: var(--shadow); margin-bottom: 15px;">
-                <h3 class="serif-font" style="font-size: 1.5rem; color: var(--primary-dark); margin-bottom: 2px;">Esther Simon</h3>
-                <p style="font-size: 0.85rem; color: var(--brand-brown-photo); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Program Coordinator</p>
+                <h3 class="serif-font" style="font-size: 1.5rem; color: var(--primary-dark); margin-bottom: 2px;" data-i18n="school.estherName">Esther Simon</h3>
+                <p style="font-size: 0.85rem; color: var(--brand-brown-photo); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;" data-i18n="school.estherRole">Program Coordinator</p>
             </div>
 
             <!-- Right: Bio & Key Expertise -->
             <div>
-                <span style="background: var(--brand-sage); color: var(--primary-dark); padding: 4px 12px; border-radius: 20px; font-size: 0.78rem; font-weight: 700; display: inline-block; margin-bottom: 12px;">Counsellor & Psychology Professional</span>
-                <h3 class="serif-font" style="font-size: 1.6rem; color: var(--brand-brown-photo); margin-bottom: 12px;">Youth Support & Workshop Facilitation</h3>
-                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px;">
+                <span style="background: var(--brand-sage); color: var(--primary-dark); padding: 4px 12px; border-radius: 20px; font-size: 0.78rem; font-weight: 700; display: inline-block; margin-bottom: 12px;" data-i18n="school.estherTag">Counsellor & Psychology Professional</span>
+                <h3 class="serif-font" style="font-size: 1.6rem; color: var(--brand-brown-photo); margin-bottom: 12px;" data-i18n="school.estherFocusTitle">Youth Support & Workshop Facilitation</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px;" data-i18n="school.estherBio">
                     Esther is a dedicated psychology professional with two years of hands-on counseling experience and certification in Trauma Care and Support. Currently pursuing her Master’s degree in Psychology, she specializes in working with adolescents, young adults, and students.
                 </p>
                 
-                <h4 style="font-size: 1rem; color: var(--primary-dark); margin-bottom: 8px;">Key Expertise & Focus Areas:</h4>
+                <h4 style="font-size: 1rem; color: var(--primary-dark); margin-bottom: 8px;" data-i18n="school.estherAreasTitle">Key Expertise & Focus Areas:</h4>
                 <ul style="list-style-type: none; display: flex; flex-direction: column; gap: 6px; margin-bottom: 15px;">
-                    <li style="position: relative; padding-left: 18px; font-size: 0.9rem; color: var(--text-muted);">
+                    <li style="position: relative; padding-left: 18px; font-size: 0.9rem; color: var(--text-muted);" data-i18n="school.estherArea1">
                         <strong style="color: var(--primary-dark);">Student Counseling:</strong> Providing empathetic emotional support, building trust, and helping youth navigate personal and academic challenges.
                     </li>
-                    <li style="position: relative; padding-left: 18px; font-size: 0.9rem; color: var(--text-muted);">
+                    <li style="position: relative; padding-left: 18px; font-size: 0.9rem; color: var(--text-muted);" data-i18n="school.estherArea2">
                         <strong style="color: var(--primary-dark);">Workshop Facilitation:</strong> Designing and leading interactive, age-appropriate sessions that actively engage student audiences.
                     </li>
-                    <li style="position: relative; padding-left: 18px; font-size: 0.9rem; color: var(--text-muted);">
+                    <li style="position: relative; padding-left: 18px; font-size: 0.9rem; color: var(--text-muted);" data-i18n="school.estherArea3">
                         <strong style="color: var(--primary-dark);">Core Topics:</strong> Stress and exam management, emotional awareness, self-esteem building, peer relationships, and bullying prevention.
                     </li>
                 </ul>
 
-                <p style="color: var(--text-muted); font-size: 0.9rem; font-style: italic; border-left: 3px solid var(--brand-brown-photo); padding-left: 10px; margin-top: 10px;">
+                <p style="color: var(--text-muted); font-size: 0.9rem; font-style: italic; border-left: 3px solid var(--brand-brown-photo); padding-left: 10px; margin-top: 10px;" data-i18n="school.estherQuote">
                     "To foster a caring, safe environment that empowers young minds to build resilience, communicate effectively, and grow with confidence."
                 </p>
             </div>
@@ -260,20 +304,23 @@
     
     <!-- Get in Touch CTA Box -->
     <div class="cta-box">
-        <h3>Get in Touch with Our School Outreach Team</h3>
-        <p>Invite principals, counselors, and trustees to book a 30-minute alignment meeting or request a custom workshop calendar.</p>
-        <a href="index.html#contact" class="btn-hero-primary">Book Consultation / Request Calendar</a>
+        <h3 data-i18n="school.ctaTitle">Get in Touch with Our School Outreach Team</h3>
+        <p data-i18n="school.ctaDesc">Invite principals, counselors, and trustees to book a 30-minute alignment meeting or request a custom workshop calendar.</p>
+        <a href="index.html#contact" class="btn-hero-primary" data-i18n="school.ctaBtn">Book Consultation / Request Calendar</a>
     </div>
 
     <!-- Footer -->
     <footer>
         <img src="logo-white.png" alt="Better You White Logo" class="footer-logo-img">
         <div class="footer-logo serif-font">BETTER YOU MIND WELLNESS CLINIC</div>
-        <p class="footer-tagline">Understand. Heal. Grow. Become a Better You.</p>
+        <p class="footer-tagline" data-i18n="footer.tagline">Understand. Heal. Grow. Become a Better You.</p>
         <div class="footer-bottom">
-            <p>&copy; 2026 Better You Mind Wellness Clinic. All Rights Reserved.</p>
+            <p data-i18n="footer.copyright">&copy; 2026 Better You Mind Wellness Clinic. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- Translation Scripts -->
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
