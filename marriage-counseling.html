@@ -9,7 +9,7 @@
         <!--Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
         <!-- FontAwesome Icons -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -33,7 +33,7 @@
             a { text-decoration: none; color: inherit; }
 
             /* Top Bar */
-            .top-bar { background-color: var(--brand-sage); color: var(--primary-dark); padding: 8px 5%; font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; flex-wrap; gap: 10px; font-weight: 500; }
+            .top-bar { background-color: var(--brand-sage); color: var(--primary-dark); padding: 8px 5%; font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-weight: 500; }
             .top-bar-info { display: flex; gap: 20px; }
             .top-bar-info i { color: var(--brand-brown-photo); margin-right: 6px; }
 
@@ -43,63 +43,95 @@
             .header-logo-img { height: 50px; width: auto; object-fit: contain; border-radius: 50%; }
             .logo-text { display: flex; flex-direction: column; }
             .logo-title { font-size: 1.3rem; letter-spacing: 1px; text-transform: uppercase; line-height: 1.1; color: var(--primary-dark); }
-            .logo-subtitle { font-size: 0.7rem; letetr-spacing: 2px; color: var(--text-muted); text-transform: uppercase; }
+            .logo-subtitle { font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); text-transform: uppercase; }
             .nav-links { display: flex; list-style: none; gap: 25px; align-items: center; }
             .nav-links a { font-size: 0.95rem; font-weight: 500; transition: var(--transition); color: var(--primary-dark); }
             .nav-links a:hover { color: var(--brand-brown-photo); }
             .btn-nav-book { background-color: var(--brand-sage); color: var(--primary-dark); padding: 10px 22px; border-radius: 30px; transition: var(--transition); border: 1px solid var(--brand-sage); display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 600; }
 
+            /* Language Switcher */
+            .lang-switch-container {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                background: rgba(0, 0, 0, 0.04);
+                padding: 4px 10px;
+                border-radius: 20px;
+                font-size: 0.85rem;
+                font-weight: 600;
+            }
+
+            .lang-btn {
+                background: none;
+                border: none;
+                cursor: pointer;
+                font-family: inherit;
+                font-size: 0.85rem;
+                color: var(--text-muted);
+                transition: var(--transition);
+                padding: 2px 4px;
+            }
+
+            .lang-btn.active, .lang-btn:hover {
+                color: var(--brand-brown-photo);
+                font-weight: 700;
+            }
+
+            .lang-divider {
+                color: var(--border-color);
+            }
+
             /* Hero */
             .hero { padding: 80px 5%; background: var(--brand-sage); text-align: center; max-width: 900px; margin: 40px auto; border-radius: 16px; }
-        .hero-subtitle { text-transform: uppercase; letter-spacing: 3px; color: var(--brand-brown-photo); font-size: 0.9rem; margin-bottom: 10px; font-weight: 700; }
-        .hero-title { font-size: 2.8rem; color: var(--primary-dark); line-height: 1.2; margin-bottom: 20px; }
-        .hero-desc { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 30px; }
-        
-        /* Content Sections */
-        section { padding: 60px 5%; max-width: 1100px; margin: 0 auto; }
-        h2 { font-size: 2.2rem; color: var(--primary-dark); margin-bottom: 30px; text-align: center; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .card { background: #FFFFFF; padding: 30px; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: var(--shadow); }
-        .card h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--brand-brown-photo); }
-        .card p { color: var(--text-muted); font-size: 0.95rem; }
+            .hero-subtitle { text-transform: uppercase; letter-spacing: 3px; color: var(--brand-brown-photo); font-size: 0.9rem; margin-bottom: 10px; font-weight: 700; }
+            .hero-title { font-size: 2.8rem; color: var(--primary-dark); line-height: 1.2; margin-bottom: 20px; }
+            .hero-desc { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 30px; }
+            
+            /* Content Sections */
+            section { padding: 60px 5%; max-width: 1100px; margin: 0 auto; }
+            h2 { font-size: 2.2rem; color: var(--primary-dark); margin-bottom: 30px; text-align: center; }
+            .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+            .card { background: #FFFFFF; padding: 30px; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: var(--shadow); }
+            .card h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--brand-brown-photo); }
+            .card p { color: var(--text-muted); font-size: 0.95rem; }
 
-        /* Footer */
-        footer {
-            background: var(--brand-brown-photo);
-            color: #FFFFFF;
-            padding: 50px 5% 20px;
-            text-align: center;
-        }
+            /* Footer */
+            footer {
+                background: var(--brand-brown-photo);
+                color: #FFFFFF;
+                padding: 50px 5% 20px;
+                text-align: center;
+            }
 
-        .footer-logo-img {
-            height: 80px;
-            width: auto;
-            object-fit: contain;
-            margin-bottom: 15px;
-        }
+            .footer-logo-img {
+                height: 80px;
+                width: auto;
+                object-fit: contain;
+                margin-bottom: 15px;
+            }
 
-        .footer-logo {
-            font-size: 1.5rem;
-            color: #FFFFFF;
-            margin-bottom: 5px;
-        }
+            .footer-logo {
+                font-size: 1.5rem;
+                color: #FFFFFF;
+                margin-bottom: 5px;
+            }
 
-        .footer-tagline {
-            color: #F8FAF7;
-            font-style: italic;
-            margin-bottom: 25px;
-        }
+            .footer-tagline {
+                color: #F8FAF7;
+                font-style: italic;
+                margin-bottom: 25px;
+            }
 
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            padding-top: 20px;
-            font-size: 0.85rem;
-            color: #F3EBE1;
-        }
-        
-        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25D366; color: #FFF; border-radius: 50px; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 2px 5px 15px rgba(0,0,0,0.2); z-index: 1000; text-decoration: none; }
-    </style>
-</head>
+            .footer-bottom {
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+                padding-top: 20px;
+                font-size: 0.85rem;
+                color: #F3EBE1;
+            }
+            
+            .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25D366; color: #FFF; border-radius: 50px; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 2px 5px 15px rgba(0,0,0,0.2); z-index: 1000; text-decoration: none; }
+        </style>
+    </head>
 <body>
 
     <a href="https://wa.me/+917045914020?text=Hello!%20I%20want%20to%20know%20more%20about%20Marriage%20Counseling." class="whatsapp-float" target="_blank">
@@ -110,9 +142,9 @@
     <div class="top-bar">
         <div class="top-bar-info">
             <span><i class="fa-solid fa-phone"></i> +91 70459 14020</span>
-            <span><i class="fa-solid fa-location-dot"></i> Mira Road, Mumbai 401107</span>
+            <span><i class="fa-solid fa-location-dot"></i> <span data-i18n="topbar.address">Mira Road, Mumbai 401107</span></span>
         </div>
-        <div><span><i class="fa-solid fa-heart"></i> Couples & Marital Support</span></div>
+        <div><span><i class="fa-solid fa-heart"></i> <span data-i18n="marriage.topbarSupport">Couples & Marital Support</span></span></div>
     </div>
 
     <!-- Navigation Header -->
@@ -124,50 +156,55 @@
                 <span class="logo-subtitle">Mind Wellness Clinic</span>
             </div>
         </div>
-<ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="marriage-counseling.html">Marriage Counseling</a></li>
-    <li><a href="corporate-wellness.html">Corporate Wellness</a></li>
-    <li><a href="school-workshops.html">School Programs</a></li>
-    <li><a href="index.html#contact" class="btn-nav-book">Book Session <i class="fa-solid fa-arrow-right"></i></a></li>
-</ul>
+        <ul class="nav-links">
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="marriage-counseling.html" data-i18n="nav.marriage">Marriage Counseling</a></li>
+            <li><a href="corporate-wellness.html" data-i18n="nav.corporate">Corporate Wellness</a></li>
+            <li><a href="school-workshops.html" data-i18n="nav.school">School Programs</a></li>
+            <li><a href="index.html#contact" class="btn-nav-book"><span data-i18n="nav.book">Book Session</span> <i class="fa-solid fa-arrow-right"></i></a></li>
+            <li class="lang-switch-container">
+                <button onclick="setLanguage('en')" id="lang-en" class="lang-btn active">EN</button>
+                <span class="lang-divider">|</span>
+                <button onclick="setLanguage('hi')" id="lang-hi" class="lang-btn">हिंदी</button>
+            </li>
+        </ul>
     </nav>
 
     <!-- Hero Section -->
     <div class="hero">
-        <p class="hero-subtitle">Specialized Support</p>
-        <h1 class="hero-title serif-font">Rebuild Connection, Trust, and Communication</h1>
-        <p class="hero-desc">Relationships go through seasons of distance and friction. You don't have to navigate the gridlock alone. Our couples counseling offers a safe, neutral space to heal and reconnect.</p>
-        <a href="index.html#contact" class="btn-nav-book" style="background-color: var(--brand-brown-photo); color: #fff;">Book a Couples Consultation</a>
+        <p class="hero-subtitle" data-i18n="marriage.heroSub">Specialized Support</p>
+        <h1 class="hero-title serif-font" data-i18n="marriage.heroTitle">Rebuild Connection, Trust, and Communication</h1>
+        <p class="hero-desc" data-i18n="marriage.heroDesc">Relationships go through seasons of distance and friction. You don't have to navigate the gridlock alone. Our couples counseling offers a safe, neutral space to heal and reconnect.</p>
+        <a href="index.html#contact" class="btn-nav-book" style="background-color: var(--brand-brown-photo); color: #fff;" data-i18n="marriage.heroBtn">Book a Couples Consultation</a>
     </div>
 
     <!-- Pain Points Section -->
     <section>
-        <h2>Are You and Your Partner Experiencing...</h2>
+        <h2 data-i18n="marriage.gridTitle">Are You and Your Partner Experiencing...</h2>
         <div class="grid-3">
             <div class="card">
-                <h3>Communication Gridlocks</h3>
-                <p>Feeling like every conversation escalates into an argument, or drifting into uncomfortable silence where nothing gets resolved.</p>
+                <h3 data-i18n="marriage.c1.title">Communication Gridlocks</h3>
+                <p data-i18n="marriage.c1.desc">Feeling like every conversation escalates into an argument, or drifting into uncomfortable silence where nothing gets resolved.</p>
             </div>
             <div class="card">
-                <h3>Emotional Disconnect</h3>
-                <p>Living more like roommates than partners, feeling lonely even when you are in the same room together.</p>
+                <h3 data-i18n="marriage.c2.title">Emotional Disconnect</h3>
+                <p data-i18n="marriage.c2.desc">Living more like roommates than partners, feeling lonely even when you are in the same room together.</p>
             </div>
             <div class="card">
-                <h3>Major Life Transitions</h3>
-                <p>Navigating the intense stress of parenthood, career shifts, financial strain, or family pressures that strain the bond.</p>
+                <h3 data-i18n="marriage.c3.title">Major Life Transitions</h3>
+                <p data-i18n="marriage.c3.desc">Navigating the intense stress of parenthood, career shifts, financial strain, or family pressures that strain the bond.</p>
             </div>
             <div class="card">
-                <h3>Trust & Betrayal Recovery</h3>
-                <p>Working through breaches of trust, emotional affairs, or past hurts that require careful, guided reconstruction.</p>
+                <h3 data-i18n="marriage.c4.title">Trust & Betrayal Recovery</h3>
+                <p data-i18n="marriage.c4.desc">Working through breaches of trust, emotional affairs, or past hurts that require careful, guided reconstruction.</p>
             </div>
             <div class="card">
-                <h3>Pre-Marital Guidance</h3>
-                <p>Laying a strong foundation before marriage by aligning on core values, finances, expectations, and conflict styles.</p>
+                <h3 data-i18n="marriage.c5.title">Pre-Marital Guidance</h3>
+                <p data-i18n="marriage.c5.desc">Laying a strong foundation before marriage by aligning on core values, finances, expectations, and conflict styles.</p>
             </div>
             <div class="card">
-                <h3>Intimacy Challenges</h3>
-                <p>Loss of physical or emotional intimacy, feeling undesired, or struggling with vulnerability.</p>
+                <h3 data-i18n="marriage.c6.title">Intimacy Challenges</h3>
+                <p data-i18n="marriage.c6.desc">Loss of physical or emotional intimacy, feeling undesired, or struggling with vulnerability.</p>
             </div>
         </div>
     </section>
@@ -176,13 +213,14 @@
     <footer>
         <img src="logo-white.png" alt="Better You White Logo" class="footer-logo-img">
         <div class="footer-logo serif-font">BETTER YOU MIND WELLNESS CLINIC</div>
-        <p class="footer-tagline">Understand. Heal. Grow. Become a Better You.</p>
+        <p class="footer-tagline" data-i18n="footer.tagline">Understand. Heal. Grow. Become a Better You.</p>
         <div class="footer-bottom">
-            <p>&copy; 2026 Better You Mind Wellness Clinic. All Rights Reserved.</p>
+            <p data-i18n="footer.copyright">&copy; 2026 Better You Mind Wellness Clinic. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- Translation Scripts -->
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
-            
-
