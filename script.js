@@ -12,9 +12,12 @@ function setLanguage(lang) {
   if (!dict) return;
 
   const getTranslation = (langDict, attrValue) => {
+    // 1. Try direct flat key lookup (e.g., "marriage.heroTitle")
     if (langDict[attrValue] !== undefined) {
       return langDict[attrValue];
     }
+    
+    // 2. Try nested path lookup (e.g., "hero.subtitle")
     const keyPath = attrValue.split('.');
     let current = langDict;
     for (const key of keyPath) {
@@ -30,13 +33,17 @@ function setLanguage(lang) {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const attr = el.getAttribute('data-i18n');
     const val = getTranslation(dict, attr);
-    if (val !== undefined) el.innerHTML = val;
+    if (val !== undefined) {
+      el.innerHTML = val;
+    }
   });
 
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     const attr = el.getAttribute('data-i18n-placeholder');
     const val = getTranslation(dict, attr);
-    if (val !== undefined) el.placeholder = val;
+    if (val !== undefined) {
+      el.placeholder = val;
+    }
   });
 }
 
