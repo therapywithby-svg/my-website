@@ -1,22 +1,20 @@
 function setLanguage(lang) {
   localStorage.setItem('preferred_language', lang);
+
   const btnEn = document.getElementById('lang-en');
   const btnHi = document.getElementById('lang-hi');
   if (btnEn && btnHi) {
-    if (lang === 'hi') {
-      btnHi.classList.add('active');
-      btnEn.classList.remove('active');
-                             } else {
-      btnEn.classList.add('active');
-      btnHi.classList.remove('active');
-    }
+    btnEn.classList.toggle('active', lang === 'en');
+    btnHi.classList.toggle('active', lang === 'hi');
   }
+
+  const dict = translations[lang];
+  if (!dict) return;
 
   const getTranslation = (langDict, attrValue) => {
     if (langDict[attrValue] !== undefined) {
       return langDict[attrValue];
     }
-
     const keyPath = attrValue.split('.');
     let current = langDict;
     for (const key of keyPath) {
@@ -29,25 +27,17 @@ function setLanguage(lang) {
     return typeof current === 'string' ? current : undefined;
   };
 
-  const elements = document.querySelectorAll('[data-i18n]');
-  elements.forEach(element ==> {
-    const attr = element.getAttribute('data-i18n');
-    const translation = getTranslation(translations[lang], attr);
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const attr = el.getAttribute('data-i18n');
+    const val = getTranslation(dict, attr);
+    if (val !== undefined) el.innerHTML = val;
+  });
 
-  if (translation !== undefined) {
-    element.innerHTML = translation;
-  }
-});
-
-const placeholderElements = document.querySelectorAll('[data-i18n-placeholder]');
-placeholderElements.forEach(element => {
-  const attr = element.getAttribute('data-i18n-placeholder');
-  const translation = getTranslation(translations[lang], attr);
-
-  if (translation !== undefined) {
-    element.placeholder = translation;
-  }
-});
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const attr = el.getAttribute('data-i18n-placeholder');
+    const val = getTranslation(dict, attr);
+    if (val !== undefined) el.placeholder = val;
+  });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
