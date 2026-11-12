@@ -5,7 +5,7 @@ function setLanguage(lang) {
   if (btnEn && btnHi) {
     if (lang === 'hi') {
       btnHi.classList.add('active');
-      btnEn.classList.remove('active);
+      btnEn.classList.remove('active');
                              } else {
       btnEn.classList.add('active');
       btnHi.classList.remove('active');
