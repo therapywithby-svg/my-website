@@ -232,7 +232,7 @@ const translations = {
     "nav.school": "स्कूल कार्यक्रम",
     "nav.marriage": "विवाह",
     "nav.corporate": "कॉर्पोरेट",
-    "nav.philosophy": "दर्शन",
+    "nav.philosophy": "दर्शनशास्र",
     "nav.faq": "सामान्य प्रश्न",
     "nav.book": "सत्र बुक करें",
     "nav.home": "होम",
