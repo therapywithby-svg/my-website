@@ -129,12 +129,17 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: 18px;
             align-items: center;
+            flex-wrap: nowrap;
+        }
+
+        .nav-links li {
+            white-space: nowrap;
         }
 
         .nav-links a {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 500;
             transition: var(--transition);
             color: var(--primary-dark);
